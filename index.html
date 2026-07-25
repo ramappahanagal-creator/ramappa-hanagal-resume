@@ -38,16 +38,29 @@
             flex-shrink: 0;
         }
         .profile-title-area h1 {
-            margin: 0 0 8px 0;
+            margin: 0 0 5px 0;
             color: #004d40;
             font-size: 2em;
             letter-spacing: 0.5px;
         }
-        .profile-title-area p {
-            margin: 0;
+        .profile-title-area .designation {
+            margin: 0 0 10px 0;
             color: #444;
-            font-size: 1.15em;
+            font-size: 1.1em;
             font-weight: bold;
+        }
+        .header-contact-info {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.5;
+        }
+        .header-contact-info a {
+            color: #004d40;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .header-contact-info a:hover {
+            text-decoration: underline;
         }
         details {
             margin-bottom: 15px;
@@ -92,12 +105,16 @@
 
 <div class="profile-container">
     
-    <!-- Profile Header with my-photo.jpg -->
+    <!-- Profile Header with Image & Full Contact Info directly visible -->
     <div class="profile-header">
         <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-pic">
         <div class="profile-title-area">
             <h1>RAMAPPA HANAGAL</h1>
-            <p>Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</p>
+            <p class="designation">Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</p>
+            <div class="header-contact-info">
+                📍 Sarjapura, Bengaluru, India | 📞 9964375609<br>
+                ✉️ <a href="mailto:ramappa.hanagal@gmail.com">ramappa.hanagal@gmail.com</a> | 🔗 <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">linkedin.com/in/ramappa-hanagal</a>
+            </div>
         </div>
     </div>
 
@@ -203,17 +220,17 @@
         </div>
     </details>
 
-    <!-- 8. Contact Details & Professional Links (Prominently Placed) -->
-    <details open>
-        <summary>8. Contact Details & Professional Links</summary>
+    <!-- 8. Professional Details -->
+    <details>
+        <summary>8. Professional Details</summary>
         <div class="content-box contact-info">
             <ul>
                 <li><strong>Name:</strong> Ramappa Hanagal</li>
                 <li><strong>Title:</strong> Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</li>
                 <li><strong>Location:</strong> Sarjapura, Bengaluru, India</li>
+                <li><strong>Contact:</strong> 9964375609</li>
                 <li><strong>Email:</strong> <a href="mailto:ramappa.hanagal@gmail.com">ramappa.hanagal@gmail.com</a></li>
-                <li><strong>Phone / Contact:</strong> 9964375609</li>
-                <li><strong>LinkedIn Profile:</strong> <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">linkedin.com/in/ramappa-hanagal</a></li>
+                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">linkedin.com/in/ramappa-hanagal</a></li>
             </ul>
         </div>
     </details>
