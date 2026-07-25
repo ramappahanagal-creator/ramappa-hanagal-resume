@@ -28,6 +28,7 @@
             border-bottom: 2px solid #e2e8f0;
             padding-bottom: 20px;
             margin-bottom: 20px;
+            position: relative;
         }
         .profile-pic {
             width: 120px;
@@ -69,6 +70,36 @@
         }
         .header-contact-info a:hover {
             text-decoration: underline;
+        }
+        /* Download PDF Button Style */
+        .download-btn {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 16px;
+            font-size: 0.9em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.2s;
+        }
+        .download-btn:hover {
+            background-color: #1d4ed8;
+        }
+        @media print {
+            .download-btn, body {
+                background-color: white !important;
+            }
+            details {
+                break-inside: avoid;
+            }
         }
         details {
             margin-bottom: 15px;
@@ -128,6 +159,7 @@
 <div class="profile-container">
     
     <div class="profile-header">
+        <button class="download-btn" onclick="window.print()">📥 Download PDF</button>
         <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-pic">
         <div class="profile-title-area">
             <h1>RAMAPPA HANAGAL</h1>
