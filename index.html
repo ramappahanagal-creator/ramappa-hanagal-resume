@@ -51,6 +51,22 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
+        /* Profile Photo Styling */
+        .profile-img-container {
+            margin: 0 auto 15px auto;
+            width: 120px;
+            height: 120px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+        }
+
         .profile-card h1 {
             font-size: 28px;
             font-weight: 700;
@@ -105,7 +121,7 @@
             color: #fff !important;
         }
 
-        /* Native HTML5 Details & Summary Styling */
+        /* HTML5 Details & Summary Styling */
         details {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -125,7 +141,7 @@
             font-weight: 700;
             color: var(--text-main);
             cursor: pointer;
-            list-style: none; /* Hide default triangle */
+            list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -133,7 +149,7 @@
         }
 
         summary::-webkit-details-marker {
-            display: none; /* Hide default Chrome triangle */
+            display: none;
         }
 
         summary .title-text {
@@ -148,7 +164,6 @@
             width: 20px;
         }
 
-        /* Custom Arrow icon using FontAwesome */
         summary::after {
             content: '\f078';
             font-family: 'Font Awesome 6 Free';
@@ -167,7 +182,6 @@
             border-bottom: 1px solid var(--border);
         }
 
-        /* Content Box inside Section */
         .details-body {
             padding: 20px 24px;
             color: var(--text-muted);
@@ -222,8 +236,13 @@
 
     <div class="cv-container">
 
-        <!-- Main Header Card with Quick Action Buttons -->
+        <!-- Header Card with Profile Image -->
         <header class="profile-card">
+            <div class="profile-img-container">
+                <img src="profile.jpg" alt="Ramappa Hanagal" class="profile-img" 
+                     onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ramappa+Hanagal&background=38bdf8&color=0f172a&size=128';">
+            </div>
+
             <h1>RAMAPPA HANAGAL</h1>
             <h3>Senior Technical Lead Analyst — Lab Infrastructure, SRE & Hardware Operations</h3>
 
