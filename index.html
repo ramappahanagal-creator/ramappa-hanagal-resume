@@ -1,223 +1,358 @@
-<!DOCTYPE html>
+[10:01 pm, 25/07/2026] RamcharanYashas Hanagal: <!DOCTYPE html>
+<html lang="kn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMAPPA HANAGAL - Digital CV</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --accent-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            …
+[10:04 pm, 25/07/2026] RamcharanYashas Hanagal: <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ramappa Hanagal - Interactive Digital Resume</title>
-<style>
-  :root {
-    --primary: #0f172a;
-    --accent: #2563eb;
-    --bg: #f8fafc;
-    --card: #ffffff;
-    --text: #1e293b;
-    --border: #e2e8f0;
-  }
-  body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: var(--bg); 
-    color: var(--text); 
-    margin: 0; 
-    padding: 20px; 
-    line-height: 1.6; 
-  }
-  .container { 
-    max-width: 900px; 
-    margin: 0 auto; 
-    background: var(--card); 
-    border-radius: 12px; 
-    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
-    overflow: hidden; 
-    border: 1px solid var(--border);
-  }
-  .header { 
-    background: var(--primary); 
-    color: white; 
-    padding: 30px; 
-    display: flex; 
-    flex-wrap: wrap; 
-    align-items: center; 
-    gap: 20px; 
-  }
-  .profile-pic { 
-    width: 120px; 
-    height: 120px; 
-    border-radius: 50%; 
-    border: 3px solid white; 
-    object-fit: cover; 
-    background: #e2e8f0; 
-  }
-  .header-info h1 { 
-    margin: 0; 
-    font-size: 26px; 
-    letter-spacing: 0.5px;
-  }
-  .header-info .title { 
-    color: #93c5fd; 
-    font-weight: 600; 
-    font-size: 14px; 
-    margin-top: 5px; 
-    text-transform: uppercase;
-  }
-  .contacts { 
-    margin-top: 15px; 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 10px; 
-  }
-  .contact-btn { 
-    background: rgba(255,255,255,0.1); 
-    color: white; 
-    text-decoration: none; 
-    padding: 6px 12px; 
-    border-radius: 20px; 
-    font-size: 13px; 
-    border: 1px solid rgba(255,255,255,0.2); 
-    transition: all 0.3s ease;
-  }
-  .contact-btn:hover {
-    background: rgba(255,255,255,0.25);
-  }
-  .content { 
-    padding: 30px; 
-  }
-  details { 
-    background: #f1f5f9; 
-    border-radius: 8px; 
-    margin-bottom: 15px; 
-    padding: 12px 18px; 
-    border-left: 4px solid var(--accent); 
-  }
-  summary { 
-    font-weight: bold; 
-    font-size: 16px; 
-    cursor: pointer; 
-    color: var(--primary); 
-    outline: none; 
-  }
-  details[open] summary { 
-    margin-bottom: 10px; 
-    border-bottom: 1px solid #cbd5e1; 
-    padding-bottom: 5px; 
-  }
-  ul { 
-    padding-left: 20px; 
-    margin: 5px 0; 
-  }
-  li {
-    margin-bottom: 5px;
-  }
-  .badge { 
-    display: inline-block; 
-    background: #e0e7ff; 
-    color: #3730a3; 
-    padding: 5px 10px; 
-    border-radius: 6px; 
-    font-size: 12px; 
-    font-weight: 500;
-    margin: 3px; 
-  }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAMAPPA HANAGAL - Digital CV</title>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1e293b;
+            --accent-color: #2563eb;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-color: #334155;
+            --border-color: #e2e8f0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .cv-container {
+            width: 100%;
+            max-width: 900px;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            padding: 40px;
+            box-sizing: border-box;
+        }
+
+        /* Header & Profile Styling */
+        .header {
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 25px;
+            margin-bottom: 30px;
+        }
+
+        .profile-img-container {
+            margin-bottom: 15px;
+        }
+
+        .profile-img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--accent-color);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .header h1 {
+            margin: 0;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+            letter-spacing: 1px;
+        }
+
+        .header h3 {
+            margin: 8px 0;
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a, .contact-info span {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+            gap: 10px;
+        }
+
+        .btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        /* Interactive Accordion Sections */
+        .section-block {
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .section-header {
+            background-color: #f1f5f9;
+            padding: 16px 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            user-select: none;
+            transition: background 0.2s;
+        }
+
+        .section-header:hover {
+            background-color: #e2e8f0;
+        }
+
+        .section-header i.icon-left {
+            margin-right: 10px;
+            color: var(--accent-color);
+        }
+
+        .section-content {
+            padding: 20px;
+            display: none;
+            background: #fff;
+            line-height: 1.6;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        /* Sub-items Styling */
+        .job-title {
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 1.1rem;
+        }
+
+        .company-dates {
+            font-style: italic;
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .sub-heading {
+            font-weight: bold;
+            color: #1e293b;
+            margin-top: 12px;
+            margin-bottom: 6px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Print CSS */
+        @media print {
+            body { background: white; padding: 0; }
+            .cv-container { box-shadow: none; border: none; padding: 0; max-width: 100%; }
+            .actions { display: none; }
+            .section-content { display: block !important; }
+            .section-header { background: none; padding: 10px 0; border-bottom: 1px solid #000; }
+            .section-header i.chevron { display: none; }
+            .section-block { border: none; margin-bottom: 20px; }
+        }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <div class="header">
-    <img src="https://via.placeholder.com/120" alt="Ramappa Hanagal" class="profile-pic">
-    <div class="header-info">
-      <h1>RAMAPPA HANAGAL</h1>
-      <div class="title">SENIOR TECHNICAL LEAD ANALYST – LAB INFRASTRUCTURE & PROJECT MANAGEMENT OPERATIONS</div>
-      <div class="contacts">
-        <a href="tel:+919964375609" class="contact-btn">📱 +91 9964375609</a>
-        <a href="mailto:ramappa.hanagal@gmail.com" class="contact-btn">📧 ramappa.hanagal@gmail.com</a>
-        <a href="https://linkedin.com/in/ramappahanagal" target="_blank" class="contact-btn">🔗 LinkedIn Profile</a>
-        <span class="contact-btn">📍 Bengaluru, India</span>
-      </div>
+<div class="cv-container">
+
+    <!-- Action Buttons -->
+    <div class="actions">
+        <button class="btn" onclick="window.print()"><i class="fas fa-file-pdf"></i> Download PDF</button>
+        <button class="btn" onclick="toggleAll()"><i class="fas fa-eye"></i> Expand / Collapse All</button>
     </div>
-  </div>
 
-  <div class="content">
+    <!-- Header Section -->
+    <div class="header">
+        <div class="profile-img-container">
+            <img src="profile.jpg" alt="Ramappa Hanagal Profile Photo" class="profile-img">
+        </div>
+        <h1>RAMAPPA HANAGAL</h1>
+        <h3>Technical Lead | IT Infrastructure | IT Lab Operations</h3>
+        
+        <div class="contact-info">
+            <span><i class="fas fa-location-dot"></i> Sarjapura, Bangalore - 562125</span>
+            <a href="tel:9964375609"><i class="fas fa-phone"></i> 9964375609</a>
+            <a href="mailto:ramappa.hanagal@gmail.com"><i class="fas fa-envelope"></i> ramappa.hanagal@gmail.com</a>
+            <a href="https://linkedin.com/in/ramappa-hanagal" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
+        </div>
+    </div>
 
-    <details open>
-      <summary>📌 About Me / Professional Summary</summary>
-      <p>Hardware, Silicon Bring-Up & AI-Skilled Technical Professional with extensive experience in IT infrastructure support, hardware validation, power analysis, and laboratory operations. Proven track record in supporting complex silicon bring-up, troubleshooting leading smartphone/device platforms, and optimizing technical workflows. Certified in AI/Generative AI fundamentals, ITIL® 4, and operations management with a strong foundation in Electronics Mechanics and Information Technology.</p>
-    </details>
+    <!-- 1. Executive Summary -->
+    <div class="section-block">
+        <div class="section-header" onclick="toggleSection(this)">
+            <span><i class="fas fa-user-tie icon-left"></i> 1. Executive Summary</span>
+            <i class="fas fa-chevron-down chevron"></i>
+        </div>
+        <div class="section-content active">
+            <p>Strategic Technical Lead with 17+ years of expertise in hardware infrastructure, silicon validation, and global lab operations management. Proven track record in optimizing IT lab lifecycles, procurement processes, and complex hardware troubleshooting. Leveraging AI tools and Cloud technologies to enhance operational efficiency, reduce downtime, and ensure 100% compliance in high-security environments.</p>
+        </div>
+    </div>
 
-    <details>
-      <summary>💼 Professional Experience</summary>
-      <p><strong>Logos Business Systems → UST Global → Tech Mahindra</strong></p>
-      <p><em>Senior Technical Lead Analyst / Infrastructure & Lab Operations</em></p>
-      <ul>
-        <li>Managed end-to-end technical infrastructure support and lab readiness across multiple client assignments.</li>
-        <li>Executed hardware validation, troubleshooting, and system integration for mobile and silicon platforms.</li>
-      </ul>
-      <p><strong>Present Engagement:</strong> Technical Training & Advanced AI Applications</p>
-    </details>
+    <!-- 2. Professional Experience & Key Responsibilities -->
+    <div class="section-block">
+        <div class="section-header" onclick="toggleSection(this)">
+            <span><i class="fas fa-briefcase icon-left"></i> 2. Professional Experience & Key Responsibilities</span>
+            <i class="fas fa-chevron-down chevron"></i>
+        </div>
+        <div class="section-content">
+            
+            <!-- Company 1 -->
+            <div style="margin-bottom: 25px;">
+                <div class="job-title">Technical Lead Analyst | Tech Mahindra (Tier-1 Client)</div>
+                <div class="company-dates">Bangalore, India | April 2025 – Present</div>
+                
+                <div class="sub-heading">Handled Experience & Key Responsibilities:</div>
+                <ul>
+                    <li><strong>Hardware Infrastructure Direction:</strong> Directing complex hardware infrastructure workstreams, ensuring 100% alignment with global project timelines and operational standards.</li>
+                    <li><strong>Signal Integrity & Debugging:</strong> Leading signal integrity analysis and component-level debugging for 5G, Google Pixel, Apple iPhones, and AI-enabled hardware devices to maximize reliability and performance.</li>
+                    <li><strong>Procurement & Cost Optimization:</strong> Optimizing PMIC and RAM component cost structures via Ariba procurement platform, driving strategic vendor negotiations and budget optimization.</li>
+                    <li><strong>Teardown & Thermal Analysis:</strong> Executing advanced physical teardowns to evaluate high-density PCB integration, thermal management solutions, and component layout strategies.</li>
+                    <li><strong>Cross-functional Leadership:</strong> Collaborating with engineering and hardware testing teams to streamline hardware bring-up and EVT/DVT testing cycles.</li>
+                </ul>
+            </div>
 
-    <details>
-      <summary>📱 Mobile & Hardware Expertise</summary>
-      <p><strong>Supported Platforms:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi and other leading smartphone brands.</p>
-      <ul>
-        <li>Power Analysis & Power Consumption Evaluation</li>
-        <li>Hardware Validation & Debugging</li>
-        <li>Silicon Bring-Up & Board Power-On Activities</li>
-        <li>Lab Operations & Equipment Readiness</li>
-      </ul>
-    </details>
+            <hr style="border: 0; border-top: 1px dashed #cbd5e1; margin: 20px 0;">
 
-    <details>
-      <summary>🛠️ Handled Projects</summary>
-      <p><strong>1. Apple Project:</strong> Technical / IT infrastructure and operational support activities, system readiness, device support, troubleshooting, documentation, and coordination.</p>
-      <p><strong>2. Intel Project:</strong> Multiple Intel Silicons & Multiple Versions of Bring-Up Boards (Power-On & Bring-Up Activities Completed, equipment readiness, and lab operations support).</p>
-    </details>
+            <!-- Company 2 -->
+            <div>
+                <div class="job-title">Validation Engineer / Team Lead / Lab Admin | UST Global (Intel Client)</div>
+                <div class="company-dates">Bangalore, India | 2014 – 2025</div>
+                
+                <div class="sub-heading">Handled Experience & Key Responsibilities:</div>
+                <ul>
+                    <li><strong>Global Lab Operations & Infrastructure:</strong> Managed end-to-end IT lab operations, equipment maintenance, and setup of oscilloscopes, power supplies, and DAQ platforms.</li>
+                    <li><strong>Silicon Validation & Asset Governance:</strong> Spearheaded material control and asset tracking protocols, maintaining 100% audit accuracy for silicon assets and high-value hardware inventory.</li>
+                    <li><strong>EVT/DVT Diagnostic Workflows:</strong> Directed standardized diagnostic workflows for EVT/DVT validation platforms, resulting in a 15% reduction in total hardware debug cycle times.</li>
+                    <li><strong>Vendor Management & Contracts:</strong> Negotiated enterprise-grade service contracts for lab testing equipment, ensuring maximum uptime while adhering to project budgets.</li>
+                    <li><strong>Team Leadership & Process Optimization:</strong> Mentored junior technicians and engineers, implementing ITIL practices, incident response workflows, and safety compliance in lab environments.</li>
+                </ul>
+            </div>
 
-    <details>
-      <summary>🏆 Certifications & Professional Learning</summary>
-      <ul>
-        <li><strong>PMP®</strong> – Project Management Professional</li>
-        <li><strong>ITIL® Foundation / ITIL® 4 First Look</strong> – LinkedIn Learning</li>
-        <li><strong>Google</strong> – Introduction to Generative AI</li>
-        <li><strong>Google</strong> – Gen AI: Beyond the Chatbot</li>
-        <li><strong>Google</strong> – Gen AI Apps: Transform Your Work</li>
-        <li><strong>Google</strong> – Gen AI Agents: Transform Your Organization</li>
-        <li><strong>Tech Mahindra</strong> – AI 101 for Sales (Certificate of Achievement)</li>
-        <li><strong>Tech Mahindra</strong> – Sniffing and Defining AI Opportunities (Module 3)</li>
-        <li><strong>Tech Mahindra</strong> – Epilogue: Summary of AI 101 for Sales (Module 4)</li>
-        <li><strong>Tech Mahindra</strong> – Prologue (Certificate of Achievement)</li>
-        <li><strong>Introduction to Generative AI and Agents</strong> – Module Assessment Passed</li>
-        <li><strong>Intro to AI</strong> – Completed May 2026</li>
-        <li><strong>L1 QA and Customer Champion Certification</strong> – Assessment Passed (85%)</li>
-        <li><strong>Vendor Seller Compliance Certification</strong> – Assessment Passed (100%)</li>
-        <li><strong>ISO/IEC 42001:2023</strong> – Understanding and Implementing AIMS Standard (LinkedIn Learning)</li>
-        <li><strong>Generative AI for Business Leaders</strong> – LinkedIn Learning</li>
-        <li><strong>Technical Product Management</strong> – LinkedIn Learning</li>
-        <li><strong>Supply Chain Foundations</strong> – LinkedIn Learning</li>
-        <li><strong>Careers in Supply Chain and Operations</strong> – LinkedIn Learning</li>
-        <li><strong>Operations Management Foundations</strong> – LinkedIn Learning</li>
-        <li><strong>Make IT Work in Your Business</strong> – LinkedIn Learning</li>
-        <li><strong>Future Leaders Program (FLP)</strong> – A Servant Leadership Program (enParadigm)</li>
-        <li><strong>Learning Soldering for Electronics</strong> – LinkedIn Learning</li>
-        <li><strong>Learning FPGA Development</strong> – LinkedIn Learning</li>
-        <li><strong>Learning to Be Promotable</strong> – LinkedIn Learning</li>
-        <li><strong>Electrical Systems:</strong> Reading Drawings and Schematics (LinkedIn Learning)</li>
-        <li><strong>Building Your Technology Skills</strong> – LinkedIn Learning</li>
-        <li><strong>Computer Components and Peripherals for IT Technicians</strong> – LinkedIn Learning</li>
-        <li><strong>Skill Nation</strong> – AI Dashboard (Live Workshop) Certificate of Completion</li>
-        <li><strong>B10X</strong> – AI Certificate</li>
-      </ul>
-    </details>
+        </div>
+    </div>
 
-    <details>
-      <summary>🎓 Education</summary>
-      <ul>
-        <li><strong>B.Sc. in Information Technology</strong> — Sikkim Manipal University</li>
-        <li><strong>National Apprenticeship Certificate (NAC)</strong> — BEL, Bangalore</li>
-        <li><strong>ITI – Electronics Mechanics</strong> — Government ITI, Kalaghatagi</li>
-      </ul>
-    </details>
+    <!-- 3. Core Competencies -->
+    <div class="section-block">
+        <div class="section-header" onclick="toggleSection(this)">
+            <span><i class="fas fa-cogs icon-left"></i> 3. Core Competencies</span>
+            <i class="fas fa-chevron-down chevron"></i>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Lab Operations & Equipment Handling:</strong> End-to-End IT Lab Lifecycle Management, Asset Governance, Strategic Sourcing (Ariba), Power Supplies, Oscilloscopes, DAQ.</li>
+                <li><strong>Hardware Engineering:</strong> Technical Analyzing for Google Pixel, Apple iPhones, 5G Devices, Tablets, Laptops, High-Precision Soldering (SMD/BGA), Signal Integrity Assessments, Hardware Bring-up, Debugging (EVT/DVT).</li>
+                <li><strong>Technical Leadership & Service Management:</strong> Workforce Mentorship, Incident & Service Management, ITIL Practices, Process Optimization, Vendor Coordination.</li>
+            </ul>
+        </div>
+    </div>
 
-  </div>
 </div>
+
+<script>
+    function toggleSection(headerElement) {
+        const content = headerElement.nextElementSibling;
+        const chevron = headerElement.querySelector('.chevron');
+        
+        if (content.classList.contains('active')) {
+            content.classList.remove('active');
+            chevron.classList.replace('fa-chevron-up', 'fa-chevron-down');
+        } else {
+            content.classList.add('active');
+            chevron.classList.replace('fa-chevron-down', 'fa-chevron-up');
+        }
+    }
+
+    function toggleAll() {
+        const contents = document.querySelectorAll('.section-content');
+        const chevrons = document.querySelectorAll('.chevron');
+        const isAnyOpen = Array.from(contents).some(c => c.classList.contains('active'));
+
+        contents.forEach((content, index) => {
+            if (isAnyOpen) {
+                content.classList.remove('active');
+                chevrons[index].classList.replace('fa-chevron-up', 'fa-chevron-down');
+            } else {
+                content.classList.add('active');
+                chevrons[index].classList.replace('fa-chevron-down', 'fa-chevron-up');
+            }
+        });
+    }
+</script>
 
 </body>
 </html>
