@@ -34,13 +34,12 @@
             background-color: var(--light-bg);
             color: var(--text-main);
             line-height: 1.6;
-            padding-bottom: 50px;
+            padding: 20px;
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
         }
 
         /* Top Edit Control Bar */
@@ -61,18 +60,13 @@
             display: flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-toggle-edit:hover {
-            opacity: 0.9;
         }
 
         /* Header Section - Top Profile View */
         header {
             background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
             color: white;
-            padding: 40px 30px;
+            padding: 35px 30px;
             border-radius: 12px;
             box-shadow: var(--shadow);
             margin-bottom: 25px;
@@ -86,16 +80,17 @@
         }
 
         .avatar {
-            width: 120px;
-            height: 120px;
+            width: 130px;
+            height: 130px;
             border-radius: 50%;
             background-color: var(--secondary-color);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2.5rem;
+            font-size: 2.8rem;
+            font-weight: bold;
             color: white;
-            border: 4px solid rgba(255, 255, 255, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.3);
             flex-shrink: 0;
             overflow: hidden;
         }
@@ -111,14 +106,15 @@
         }
 
         .header-info h1 {
-            font-size: 2.2rem;
+            font-size: 2.3rem;
             font-weight: 700;
             margin-bottom: 5px;
             letter-spacing: -0.5px;
+            color: #ffffff;
         }
 
         .header-info h2 {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 400;
             color: #93c5fd;
             margin-bottom: 15px;
@@ -127,7 +123,7 @@
         .contact-links {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             font-size: 0.9rem;
         }
 
@@ -140,7 +136,6 @@
             background: rgba(255, 255, 255, 0.1);
             padding: 6px 12px;
             border-radius: 20px;
-            transition: background 0.3s;
         }
 
         .contact-links a:hover {
@@ -170,7 +165,7 @@
             font-weight: 600;
         }
 
-        /* Expandable Accordions */
+        /* Accordion Styles */
         .accordion-item {
             border: 1px solid var(--border-color);
             border-radius: 8px;
@@ -187,22 +182,12 @@
             align-items: center;
             font-weight: 600;
             color: var(--text-main);
-            transition: background 0.2s ease;
-        }
-
-        .accordion-header:hover {
-            background-color: #f1f5f9;
         }
 
         .accordion-content {
             padding: 20px;
-            display: none;
             background-color: #ffffff;
             border-top: 1px solid var(--border-color);
-        }
-
-        .accordion-content.active {
-            display: block;
         }
 
         .sub-headline {
@@ -216,14 +201,13 @@
         ul.skills-list {
             list-style-type: disc;
             padding-left: 20px;
-            margin-bottom: 10px;
         }
 
         ul.skills-list li {
             margin-bottom: 6px;
         }
 
-        /* Filterable Category Tabs for Certifications */
+        /* Tabs */
         .tab-buttons {
             display: flex;
             gap: 8px;
@@ -240,7 +224,6 @@
             font-size: 0.85rem;
             font-weight: 500;
             color: var(--text-main);
-            transition: all 0.3s ease;
         }
 
         .tab-btn.active {
@@ -256,14 +239,6 @@
             display: block;
         }
 
-        /* Editable visual highlight */
-        [contenteditable="true"] {
-            outline: 2px dashed var(--accent-color);
-            background-color: #f0fdf4;
-            padding: 2px;
-        }
-
-        /* Grid for Personal Details */
         .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -309,18 +284,19 @@
     <!-- 1. TOP HEADER SECTION (Photo, Name, Designation & Contact Details) -->
     <header>
         <div class="header-content">
+            <!-- Profile Photo -->
             <div class="avatar">
-                <!-- GitHub Raw Link for Photo -->
-                <img src="https://raw.githubusercontent.com/ramappahanagal-creator/ramappa-hanagal-resume/main/my-photo.jpg" alt="Ramappa Hanagal" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\"fa-solid fa-user-gear\"></i>';">
+                <img src="https://raw.githubusercontent.com/ramappahanagal-creator/ramappa-hanagal-resume/main/my-photo.jpg" alt="Ramappa Hanagal" onerror="this.style.display='none'; this.parentElement.innerText='RH';">
             </div>
+            
             <div class="header-info">
-                <h1 class="editable">RAMAPPA HANAGAL</h1>
-                <h2 class="editable">SENIOR TECHNICAL LEAD ANALYST — Lab Infrastructure, SRE & Hardware Operations</h2>
+                <h1>RAMAPPA HANAGAL</h1>
+                <h2>SENIOR TECHNICAL LEAD ANALYST — Lab Infrastructure, SRE & Hardware Operations</h2>
                 <div class="contact-links">
                     <a href="tel:+919964375609"><i class="fa-solid fa-phone"></i> +91 9964375609</a>
                     <a href="mailto:ramappa.hanagal@gmail.com"><i class="fa-solid fa-envelope"></i> ramappa.hanagal@gmail.com</a>
-                    <a href="https://linkedin.com/in/ramappa-hanagal" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn Profile</a>
-                    <div class="contact-item editable"><i class="fa-solid fa-location-dot"></i> Sarjapura, Bengaluru, Karnataka, India - 562125</div>
+                    <a href="https://linkedin.com/in/ramappa-hanagal" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                    <div class="contact-item"><i class="fa-solid fa-location-dot"></i> Sarjapura, Bengaluru, India</div>
                 </div>
             </div>
         </div>
@@ -330,7 +306,7 @@
     <div class="section-card">
         <div class="section-title"><i class="fa-solid fa-address-card"></i> About Me</div>
         <p class="editable">
-            Hardware, Silicon Bring-Up & AI-Skilled Technical Professional with 17+ years of extensive experience in IT infrastructure support, hardware validation, power analysis, and laboratory operations. Proven track record in supporting complex silicon bring-up, power-on activities, troubleshooting leading smartphone/device platforms (Apple iPhone, Google Pixel, Xiaomi/Mi, Realme, OPPO), and optimizing technical workflows. Certified in AI/Generative AI fundamentals, ITIL® 4, and PMP training with a strong foundation in Electronics Mechanics and Information Technology.
+            Hardware, Silicon Bring-Up & AI-Skilled Technical Professional with 17+ years of extensive experience in IT infrastructure support, hardware validation, power analysis, and laboratory operations. Proven track record in supporting complex silicon bring-up, power-on activities, troubleshooting leading smartphone/device platforms, and optimizing technical workflows.
         </p>
     </div>
 
@@ -338,287 +314,80 @@
     <div class="section-card">
         <div class="section-title"><i class="fa-solid fa-list-check"></i> Handled Responsibilities</div>
         
-        <!-- Pillar 1 -->
         <div class="accordion-item">
             <div class="accordion-header" onclick="toggleAccordion(this)">
                 <span>⚙️ 1. Lab Infrastructure & Operations Management</span>
                 <i class="fa-solid fa-chevron-down"></i>
             </div>
-            <div class="accordion-content active">
+            <div class="accordion-content">
                 <span class="sub-headline">Global Lab Governance:</span>
-                <p class="editable">End-to-end management of IT lab environments, ESD safety protocols, 100% audit readiness, and high-value silicon/bonded asset tracking.</p>
-                
-                <span class="sub-headline">Equipment & Hardware Maintenance:</span>
-                <p class="editable">Calibration, maintenance, and setup of high-precision lab tools including Oscilloscopes (CRO), DAQ platforms, Agilent Power Supplies, Logic Analyzers, Signal Generators, and Multimeters.</p>
-                
-                <span class="sub-headline">Procurement & Vendor Operations:</span>
-                <p class="editable">Strategic sourcing, lab equipment & components procurement, vendor negotiations, contract handling, and supply chain management via SAP Ariba.</p>
-            </div>
-        </div>
-
-        <!-- Pillar 2 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>🛠️ 2. Site Reliability Engineering (SRE) & Systems Optimization</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <span class="sub-headline">System Uptime & Incident Response:</span>
-                <p class="editable">Driving high-availability infrastructure operations, ITIL incident & change management, ITSM ticketing, and SLA compliance.</p>
-                
-                <span class="sub-headline">Workflow Automation & Validation:</span>
-                <p class="editable">Streamlining EVT / DVT (Engineering Validation Test / Design Validation Test) test-benches, validation pipelines, and hardware bring-up workflows.</p>
-                
-                <span class="sub-headline">Performance, Power Analysis & Thermal Debugging:</span>
-                <p class="editable">Advanced device teardowns, thermal management analysis, power rail debugging, circuit power analysis, and signal integrity assessments.</p>
-            </div>
-        </div>
-
-        <!-- Pillar 3 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>📊 3. Technical Project Management & Leadership</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <span class="sub-headline">Cross-Functional Collaboration:</span>
-                <p class="editable">Leading engineering teams, aligning cross-departmental HW/SW deliverables with enterprise goals, and standardizing technical workflows.</p>
-                
-                <span class="sub-headline">Lifecycle & Material Control:</span>
-                <p class="editable">Bonded asset tracking, FIFO inventory protocols, zero-leakage compliance, and lowering total cost of ownership (TCO).</p>
+                <p class="editable">End-to-end management of IT lab environments, ESD safety protocols, 100% audit readiness, and high-value asset tracking.</p>
+                <span class="sub-headline">Equipment Maintenance:</span>
+                <p class="editable">Calibration and setup of high-precision lab tools including Oscilloscopes, DAQ, Agilent Power Supplies, and Logic Analyzers.</p>
             </div>
         </div>
     </div>
 
-    <!-- 4. OVERALL EXPERIENCE -->
-    <div class="section-card">
-        <div class="section-title"><i class="fa-solid fa-briefcase"></i> Overall Experience</div>
-
-        <!-- Company 1 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>🔷 Tech Mahindra (Deputed to Google Client Project) | Apr 2025 – Present</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content active">
-                <p><strong>Role:</strong> Technical Lead Analyst – IT Infrastructure & Lab Operations</p>
-                <p><strong>Tenure:</strong> April 2025 – June 2026 (Google Client Project) | July 2026 – Present (Undergoing Technical Training)</p>
-                <ul class="skills-list editable" style="margin-top:10px;">
-                    <li><strong>Lab Operations & Management:</strong> Managed high-security test environments, system readiness, and ESD compliance for R&D operations.</li>
-                    <li><strong>Board Repair & Debugging:</strong> Specialist in hands-on Board Repair & Debugging, board bring-up, and root-cause failure analysis.</li>
-                    <li><strong>Power Analysis & Diagnostics:</strong> Executed Power Analysis, power rail debugging, signal integrity testing, and structural thermal analysis.</li>
-                    <li><strong>Mobile Hardware & Teardowns:</strong> Handled physical phone teardowns and structural evaluations across Google Pixel, Apple (iPhone), Realme, OPPO, Xiaomi (Mi), and 5G test units.</li>
-                    <li><strong>Micro-Rework & Fine Soldering:</strong> Executed fine-pitch micro-soldering, trace repairs, BGA reballing, and component replacement down to 01005, 0201, 0402 packages, and QFN component packages.</li>
-                    <li><strong>Present Training (July 2026 – Present):</strong> Undergoing advanced technical training in Cloud computing, AI system alignment, and IT infrastructure operations.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Company 2 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>🔷 UST Global (Intel Client Project) | 2014 – 2025 (11 Years)</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <p><strong>Role:</strong> Validation Engineer / Team Lead / Lab Admin / QA-QC Engineer</p>
-                <ul class="skills-list editable" style="margin-top:10px;">
-                    <li><strong>Hardware & Systems Integration:</strong> Hands-on experience in configuration, repair, debugging, OS loading, and required peripheral setup across <strong>Intel NUC / Intel Mini PCs, ASUS Mini Systems, Congatec Machine Systems, Enterprise Laptops, Desktops, Workstations, and Mobile Boards</strong>.</li>
-                    <li><strong>EVT / DVT Platform Validation:</strong> Directed diagnostic workflows and test-bed setups for <strong>EVT / DVT (Engineering Validation Test / Design Validation Test)</strong> platforms, reducing debug cycle times by 15%.</li>
-                    <li><strong>OS & Firmware Flashing:</strong> Executed low-level MCU testing, FPGA image flashing, and platform OS flashing across eMMC, SD cards, and USB media.</li>
-                    <li><strong>Lab Operations & Governance:</strong> Managed material control protocols and silicon tracking, maintaining 100% audit accuracy for multi-million dollar assets with zero-leakage compliance.</li>
-                    <li><strong>Procurement, SCM & Vendor Negotiation:</strong> Managed equipment sourcing, vendor negotiation, contract handling, and SCM via SAP Ariba.</li>
-                    <li><strong>ITIL / ITSM Protocols:</strong> Applied ITIL-aligned service management practices for incident handling, change requests, hardware ticketing, SLA compliance, and SOP creation.</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Company 3 -->
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>🔷 Log-Us Business Systems | 2009 – 2014 (5 Years)</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <p><strong>Role / Designation:</strong> System Engineer / Senior Rework Engineer / Technical Team Lead / Lab Admin / Lab Operations Lead</p>
-                <ul class="skills-list editable" style="margin-top:10px;">
-                    <li><strong>Microscopic Component Rework:</strong> Executed component replacement, BGA reballing, QFN rework, and fine-pitch SMD/PTH soldering down to <strong>01005, 0201, and 0402 packages</strong>.</li>
-                    <li><strong>Multi-Brand Hardware Repair & Config:</strong> Component-level troubleshooting, power rail analysis, board repair, OS loading, and required peripheral setup across Laptops, Computers, ASUS Mini, Congatec, and Smartphones (Apple iPhone, Realme, OPPO, Xiaomi Mi).</li>
-                    <li><strong>EVT / DVT Diagnostic Bench Setup:</strong> Established <strong>EVT / DVT (Engineering Validation Test / Design Validation Test)</strong> diagnostic benches and performed circuit power analysis using CRO Oscilloscopes, Logic Analyzers, and Multimeters.</li>
-                    <li><strong>Lab Management & ITIL Protocols:</strong> Managed lab inventory using FIFO (First-In, First-Out) protocols and enforced ITIL-aligned incident management workflows.</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- 5. HANDLED MAJOR PROJECTS -->
-    <div class="section-card">
-        <div class="section-title"><i class="fa-solid fa-diagram-project"></i> Handled Major Projects</div>
-        
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>🍏 Project 1: Apple Project</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <p class="editable"><strong>Focus:</strong> IT Infrastructure Support, Device Troubleshooting, System Readiness & Lab Coordination.</p>
-                <p class="editable" style="margin-top:5px;">Handled device support, configuration, and hardware troubleshooting for Apple ecosystem devices (iPhones, iPad/Tablets, Workstations). Maintained lab operational readiness, system deployment, and technical documentation.</p>
-            </div>
-        </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>🔷 Project 2: Intel Project (Silicon Bring-Up)</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <p class="editable"><strong>Focus:</strong> Intel Silicon Bring-Up, Board Power-On Activities & Hardware Validation.</p>
-                <p class="editable" style="margin-top:5px;">Executed <strong>Intel Silicon Bring-Up Board Power-On Activities</strong>, platform power analysis, and hardware bring-up workflows. Managed test-lab equipment readiness, system qualification, MCU/FPGA/eMMC flashing, and validation bench setup under strict Intel lab protocols.</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- 6. CATEGORIZED EDUCATION & CERTIFICATIONS -->
+    <!-- 4. EDUCATION & CERTIFICATIONS -->
     <div class="section-card">
         <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Certifications</div>
 
-        <!-- Filter Tabs -->
         <div class="tab-buttons">
             <button class="tab-btn active" onclick="switchTab(event, 'tab-edu')">Education</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-ai')">AI & Gen AI</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-mgmt')">ITIL & PMP</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-scm')">Supply Chain & Ops</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-tech')">Electronics & Hardware</button>
         </div>
 
-        <!-- Tab 1: Education -->
         <div id="tab-edu" class="tab-content active">
-            <ul class="skills-list editable">
-                <li><strong>B.Sc. in Information Technology (B.Sc IT)</strong> — Sikkim Manipal University, Bangalore (2013)</li>
-                <li><strong>National Apprenticeship Certificate (NAC) in Electronics Mechanics</strong> — Bharat Electronics Limited (BEL), Bangalore</li>
-                <li><strong>ITI in Electronics Mechanics</strong> — Government ITI, Kalaghatagi</li>
+            <ul class="skills-list">
+                <li><strong>B.Sc. in Information Technology</strong> — Sikkim Manipal University, Bangalore (2013)</li>
+                <li><strong>National Apprenticeship Certificate (NAC)</strong> — BEL, Bangalore</li>
             </ul>
         </div>
 
-        <!-- Tab 2: AI & Gen AI -->
         <div id="tab-ai" class="tab-content">
-            <ul class="skills-list editable">
-                <li><strong>Skill Nation AI Accelerating Program & AI Dashboard</strong> — Certificate of Completion</li>
-                <li><strong>B10X-AI Certificate</strong></li>
-                <li><strong>Google Generative AI Series:</strong> Intro to Gen AI, Gen AI Apps, Gen AI Agents, Beyond the Chatbot</li>
-                <li><strong>Tech Mahindra AI 101 Series:</strong> Modules 1-4 & Assessment Passed (May 2026)</li>
-                <li><strong>ISO/IEC 42001:2023:</strong> Understanding & Implementing AI Management System (AIMS) Standard</li>
-            </ul>
-        </div>
-
-        <!-- Tab 3: ITIL & PMP -->
-        <div id="tab-mgmt" class="tab-content">
-            <ul class="skills-list editable">
-                <li><strong>PMP® Training (35 Hours)</strong> — Project Management Professional Alignment</li>
-                <li><strong>ITIL® 4 Foundation / ITIL® 4 First Look</strong> — IT Service Management Certified</li>
-                <li><strong>Future Leaders Program (FLP)</strong> — Servant Leadership Program (enParadigm)</li>
-                <li><strong>L1 QA & Customer Champion Certification</strong> (85% Passed)</li>
-            </ul>
-        </div>
-
-        <!-- Tab 4: Supply Chain -->
-        <div id="tab-scm" class="tab-content">
-            <ul class="skills-list editable">
-                <li><strong>Supply Chain Foundations</strong> — LinkedIn Learning</li>
-                <li><strong>Careers in Supply Chain and Operations</strong> — LinkedIn Learning</li>
-                <li><strong>Operations Management Foundations</strong> — LinkedIn Learning</li>
-                <li><strong>Technical Product Management</strong> — LinkedIn Learning</li>
-            </ul>
-        </div>
-
-        <!-- Tab 5: Technical Skills -->
-        <div id="tab-tech" class="tab-content">
-            <ul class="skills-list editable">
-                <li><strong>Hardware & Networking Certification</strong> — SITD Vijayanagar, Bangalore</li>
-                <li><strong>Learning Soldering for Electronics</strong> — Micro-soldering & rework</li>
-                <li><strong>Learning FPGA Development</strong> — FPGA board programming</li>
-                <li><strong>Electrical Systems:</strong> Reading Drawings & Schematics — LinkedIn Learning</li>
-                <li><strong>Computer Components and Peripherals for IT Technicians</strong> — LinkedIn Learning</li>
+            <ul class="skills-list">
+                <li><strong>Skill Nation AI Program & AI Dashboard</strong> — Certificate of Completion</li>
+                <li><strong>Google Generative AI Series</strong> — Intro to Gen AI, Gen AI Apps</li>
             </ul>
         </div>
     </div>
 
-    <!-- 7. PERSONAL DETAILS -->
+    <!-- 5. PERSONAL DETAILS -->
     <div class="section-card">
         <div class="section-title"><i class="fa-solid fa-id-card"></i> Personal Details</div>
-        <div class="details-grid editable">
-            <div class="details-item">
-                <strong>Father's Name</strong>
-                Basalingappa Hanagal
-            </div>
-            <div class="details-item">
-                <strong>Date of Birth</strong>
-                11/11/1978
-            </div>
-            <div class="details-item">
-                <strong>Marital Status</strong>
-                Married
-            </div>
-            <div class="details-item">
-                <strong>Languages Known</strong>
-                English, Kannada, Hindi
-            </div>
-            <div class="details-item">
-                <strong>Hobbies</strong>
-                Reading, Writing, Travel, Music
-            </div>
+        <div class="details-grid">
+            <div class="details-item"><strong>Date of Birth</strong> 11/11/1978</div>
+            <div class="details-item"><strong>Languages Known</strong> English, Kannada, Hindi</div>
         </div>
     </div>
 
 </div>
 
 <script>
-    // Accordion Toggle
     function toggleAccordion(headerElement) {
         const content = headerElement.nextElementSibling;
-        const icon = headerElement.querySelector('.fa-chevron-down, .fa-chevron-up');
-        
-        if (content.style.display === "block" || content.classList.contains('active')) {
+        const icon = headerElement.querySelector('i');
+        if (content.style.display === "block") {
             content.style.display = "none";
-            content.classList.remove('active');
             if(icon) icon.className = 'fa-solid fa-chevron-down';
         } else {
             content.style.display = "block";
-            content.classList.add('active');
             if(icon) icon.className = 'fa-solid fa-chevron-up';
         }
     }
 
-    // Category Tabs Switcher
     function switchTab(event, tabId) {
-        const tabContents = document.querySelectorAll('.tab-content');
-        tabContents.forEach(content => content.classList.remove('active'));
-
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
         document.getElementById(tabId).classList.add('active');
         event.currentTarget.classList.add('active');
     }
 
-    // Edit Mode Toggle
     let isEditMode = false;
     function toggleEditMode() {
         isEditMode = !isEditMode;
-        const editables = document.querySelectorAll('.editable');
-        const btnText = document.getElementById('edit-btn-text');
-
-        editables.forEach(el => {
-            el.contentEditable = isEditMode;
-        });
-
-        if (isEditMode) {
-            btnText.innerText = 'Save Changes (Disable Edit)';
-            alert('Edit Mode Enabled! Click on any text to modify it directly.');
-        } else {
-            btnText.innerText = 'Enable Edit Mode';
-            alert('Changes saved temporarily on screen!');
-        }
+        document.querySelectorAll('.editable').forEach(el => el.contentEditable = isEditMode);
+        document.getElementById('edit-btn-text').innerText = isEditMode ? 'Disable Edit Mode' : 'Enable Edit Mode';
     }
 </script>
 
