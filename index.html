@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.5;
             color: #333;
             max-width: 900px;
             margin: 20px auto;
@@ -16,43 +16,49 @@
         }
         .profile-container {
             background: #fff;
-            padding: 30px;
+            padding: 25px;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         .profile-header {
             display: flex;
-            align-items: center;
-            gap: 25px;
+            align-items: flex-start;
+            gap: 20px;
             border-bottom: 3px solid #004d40;
-            padding-bottom: 25px;
-            margin-bottom: 25px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
         }
         .profile-pic {
-            width: 130px;
-            height: 130px;
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #004d40;
             background-color: #e0e0e0;
             flex-shrink: 0;
         }
+        .profile-title-area {
+            flex-grow: 1;
+        }
         .profile-title-area h1 {
-            margin: 0 0 5px 0;
+            margin: 0 0 4px 0;
             color: #004d40;
-            font-size: 2em;
-            letter-spacing: 0.5px;
+            font-size: 1.8em;
         }
         .profile-title-area .designation {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             color: #444;
-            font-size: 1.1em;
+            font-size: 1.05em;
             font-weight: bold;
         }
         .header-contact-info {
-            font-size: 0.95em;
-            color: #555;
-            line-height: 1.5;
+            font-size: 0.9em;
+            color: #333;
+            background: #f1f8f6;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border-left: 3px solid #004d40;
+            margin-top: 5px;
         }
         .header-contact-info a {
             color: #004d40;
@@ -69,9 +75,9 @@
             background: #fff;
         }
         summary {
-            font-size: 1.2em;
+            font-size: 1.15em;
             font-weight: bold;
-            padding: 12px 15px;
+            padding: 10px 15px;
             background-color: #004d40;
             color: white;
             cursor: pointer;
@@ -87,9 +93,10 @@
         }
         ul {
             padding-left: 20px;
+            margin: 0;
         }
         li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .contact-info a {
             color: #004d40;
@@ -105,15 +112,15 @@
 
 <div class="profile-container">
     
-    <!-- Profile Header with Image & Full Contact Info directly visible -->
+    <!-- Profile Header with Image, Name, Designation & Visible Contact Info -->
     <div class="profile-header">
         <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-pic">
         <div class="profile-title-area">
             <h1>RAMAPPA HANAGAL</h1>
             <p class="designation">Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</p>
             <div class="header-contact-info">
-                📍 Sarjapura, Bengaluru, India | 📞 9964375609<br>
-                ✉️ <a href="mailto:ramappa.hanagal@gmail.com">ramappa.hanagal@gmail.com</a> | 🔗 <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">linkedin.com/in/ramappa-hanagal</a>
+                📍 Sarjapura, Bengaluru, India &nbsp;|&nbsp; 📞 9964375609<br>
+                ✉️ <a href="mailto:ramappa.hanagal@gmail.com">ramappa.hanagal@gmail.com</a> &nbsp;|&nbsp; 🔗 <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">LinkedIn Profile</a>
             </div>
         </div>
     </div>
