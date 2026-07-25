@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAMAPPA HANAGAL — Digital CV</title>
+    <title>RAMAPPA HANAGAL — Expandable Digital CV</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,24 +20,11 @@
             --badge-bg: rgba(56, 189, 248, 0.1);
         }
 
-        /* Light Mode Variables */
-        body.light-mode {
-            --bg-color: #f1f5f9;
-            --card-bg: #ffffff;
-            --text-main: #0f172a;
-            --text-muted: #64748b;
-            --accent: #2563eb;
-            --accent-hover: #1d4ed8;
-            --border: #e2e8f0;
-            --badge-bg: #eff6ff;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Plus Jakarta Sans', sans-serif;
-            transition: background 0.3s, color 0.3s;
         }
 
         body {
@@ -48,88 +35,53 @@
             justify-content: center;
         }
 
-        .cv-wrapper {
-            max-width: 900px;
+        .cv-container {
+            max-width: 850px;
             width: 100%;
         }
 
-        /* Top Bar Controls */
-        .top-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .theme-toggle-btn {
-            background: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border);
-            padding: 10px 18px;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        /* Profile Header Card */
+        /* Profile Header */
         .profile-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 35px;
+            border-radius: 16px;
+            padding: 30px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             margin-bottom: 25px;
-        }
-
-        .profile-avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), #818cf8);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 40px;
-            color: white;
-            margin: 0 auto 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
         }
 
         .profile-card h1 {
             font-size: 28px;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         .profile-card h3 {
             color: var(--accent);
-            font-size: 15px;
+            font-size: 14px;
             margin-top: 6px;
-            font-weight: 600;
+            letter-spacing: 0.5px;
             text-transform: uppercase;
         }
 
-        /* Interactive Action Buttons */
+        /* Action Buttons */
         .action-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             justify-content: center;
-            margin-top: 25px;
+            margin-top: 20px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            padding: 12px 20px;
-            border-radius: 12px;
+            padding: 10px 16px;
+            border-radius: 10px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 14px;
+            font-size: 13px;
             border: 1px solid var(--border);
             color: var(--text-main);
             background: var(--bg-color);
@@ -138,274 +90,318 @@
         }
 
         .btn:hover {
-            transform: translateY(-2px);
             border-color: var(--accent);
             color: var(--accent);
         }
 
         .btn-primary {
             background: var(--accent);
-            color: white !important;
+            color: #0f172a !important;
             border: none;
         }
 
         .btn-primary:hover {
             background: var(--accent-hover);
+            color: #fff !important;
         }
 
-        /* Content Sections */
-        .section-card {
+        /* Expandable Accordion Container */
+        .accordion-item {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 20px;
-            padding: 30px;
-            margin-bottom: 25px;
+            border-radius: 14px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
         }
 
-        .section-title {
-            font-size: 18px;
+        .accordion-item:hover {
+            border-color: var(--accent);
+        }
+
+        /* Clickable Header */
+        .accordion-header {
+            width: 100%;
+            padding: 18px 24px;
+            background: transparent;
+            border: none;
+            color: var(--text-main);
+            font-size: 16px;
             font-weight: 700;
-            color: var(--accent);
-            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+            transition: color 0.2s;
+        }
+
+        .accordion-header .title-text {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
-        /* Experience Timeline */
-        .timeline-item {
-            border-left: 2px solid var(--border);
+        .accordion-header .title-text i {
+            color: var(--accent);
+            font-size: 18px;
+            width: 20px;
+        }
+
+        .accordion-header .chevron {
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        /* Rotated Arrow when Expanded */
+        .accordion-header.active .chevron {
+            transform: rotate(180deg);
+            color: var(--accent);
+        }
+
+        .accordion-header.active {
+            color: var(--accent);
+        }
+
+        /* Collapsible Content Body */
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease-out, padding 0.35s ease-out;
+            padding: 0 24px;
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* Inner Lists & Badges */
+        ul.bullet-list {
             padding-left: 20px;
-            margin-left: 10px;
-            margin-bottom: 25px;
-            position: relative;
         }
 
-        .timeline-item::before {
-            content: '';
-            width: 12px;
-            height: 12px;
-            background: var(--accent);
-            border-radius: 50%;
-            position: absolute;
-            left: -27px;
-            top: 4px;
+        ul.bullet-list li {
+            margin-bottom: 8px;
         }
 
-        .timeline-role {
-            font-weight: 700;
-            font-size: 16px;
-        }
-
-        .timeline-company {
-            color: var(--text-muted);
-            font-size: 14px;
-            margin: 4px 0 10px;
-        }
-
-        .timeline-list {
-            padding-left: 18px;
-            color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        /* Interactive Skill Tags */
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px;
+            padding-bottom: 5px;
         }
 
         .skill-badge {
             background: var(--badge-bg);
             color: var(--accent);
             border: 1px solid var(--border);
-            padding: 8px 16px;
-            border-radius: 30px;
+            padding: 6px 14px;
+            border-radius: 20px;
             font-size: 13px;
             font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
         }
 
-        .skill-badge:hover {
-            background: var(--accent);
-            color: white;
+        .timeline-block {
+            margin-bottom: 18px;
+            border-left: 2px solid var(--border);
+            padding-left: 15px;
         }
 
-        /* Toast Notification */
-        #toast {
-            visibility: hidden;
-            min-width: 200px;
-            background-color: var(--accent);
-            color: #fff;
-            text-align: center;
-            border-radius: 8px;
-            padding: 12px;
-            position: fixed;
-            z-index: 100;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-weight: 600;
+        .timeline-role {
+            color: var(--text-main);
+            font-weight: 700;
+            font-size: 15px;
         }
 
-        #toast.show {
-            visibility: visible;
-            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        .timeline-date {
+            color: var(--accent);
+            font-size: 13px;
+            margin-bottom: 6px;
         }
-
-        @keyframes fadein { from { bottom: 0; opacity: 0; } to { bottom: 30px; opacity: 1; } }
-        @keyframes fadeout { from { bottom: 30px; opacity: 1; } to { bottom: 0; opacity: 0; } }
     </style>
 </head>
 <body>
 
-    <div class="cv-wrapper">
-        <!-- Top Nav Controls -->
-        <div class="top-nav">
-            <button class="theme-toggle-btn" onclick="toggleTheme()">
-                <i class="fa-solid fa-moon" id="theme-icon"></i> <span id="theme-text">Dark Mode</span>
-            </button>
-            <button class="btn" onclick="window.print()">
-                <i class="fa-solid fa-print"></i> Print / Save PDF
-            </button>
-        </div>
+    <div class="cv-container">
 
-        <!-- Header Profile Card -->
+        <!-- Fixed Header Card with Quick Action Links -->
         <header class="profile-card">
-            <div class="profile-avatar">
-                <i class="fa-solid fa-user-tie"></i>
-            </div>
             <h1>RAMAPPA HANAGAL</h1>
-            <h3>Senior Technical Lead Analyst</h3>
-            <p style="color: var(--text-muted); margin-top: 8px; font-size: 14px;">
-                Lab Infrastructure, SRE & Hardware Operations
-            </p>
+            <h3>Senior Technical Lead Analyst — Lab Infrastructure, SRE & Hardware Operations</h3>
 
-            <!-- Interactive Clickable Contact Buttons -->
             <div class="action-buttons">
-                <a href="tel:+919964375609" class="btn btn-primary">
-                    <i class="fa-solid fa-phone"></i> Call
-                </a>
-                <a href="mailto:ramappa.hanagal@gmail.com" class="btn">
-                    <i class="fa-solid fa-envelope"></i> Email
-                </a>
-                <a href="https://wa.me/919964375609" target="_blank" class="btn">
-                    <i class="fa-brands fa-whatsapp"></i> WhatsApp
-                </a>
-                <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank" class="btn">
-                    <i class="fa-brands fa-linkedin"></i> LinkedIn
-                </a>
-                <a href="https://maps.google.com/?q=Sarjapura+Bengaluru" target="_blank" class="btn">
-                    <i class="fa-solid fa-location-dot"></i> Sarjapura, Bengaluru
-                </a>
-                <button class="btn" onclick="copyToClipboard('ramappa.hanagal@gmail.com')">
-                    <i class="fa-solid fa-copy"></i> Copy Email
-                </button>
+                <a href="tel:+919964375609" class="btn btn-primary"><i class="fa-solid fa-phone"></i> Call</a>
+                <a href="mailto:ramappa.hanagal@gmail.com" class="btn"><i class="fa-solid fa-envelope"></i> Email</a>
+                <a href="https://wa.me/919964375609" target="_blank" class="btn"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+                <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank" class="btn"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://maps.google.com/?q=Sarjapura+Bengaluru" target="_blank" class="btn"><i class="fa-solid fa-location-dot"></i> Sarjapura, Bengaluru</a>
             </div>
         </header>
 
-        <!-- Professional Summary -->
-        <section class="section-card">
-            <div class="section-title">
-                <i class="fa-solid fa-user"></i> Professional Summary
+        <!-- 1. Professional Summary -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-user"></i> 1. Professional Summary</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <p>Technical professional with <strong>17+ years</strong> of extensive experience in Hardware, Silicon Bring-up, and AI Technologies. Specialised in IT Infrastructure Support, Hardware Validation, Power Analysis, and Global Lab Operations Management. Backed by strong foundational education in Electronics Mechanics and Information Technology, along with professional certifications in ITIL and Generative AI Fundamentals.</p>
             </div>
-            <p style="line-height: 1.7; color: var(--text-muted);">
-                Technical professional with <strong>17+ years</strong> of extensive experience in Hardware, Silicon Bring-up, and AI Technologies. Specialised in IT Infrastructure Support, Hardware Validation, Power Analysis, and Global Lab Operations Management. Backed by strong foundational education in Electronics Mechanics and Information Technology, along with professional certifications in ITIL and Generative AI Fundamentals.
-            </p>
-        </section>
+        </div>
 
-        <!-- Interactive Skills Section -->
-        <section class="section-card">
-            <div class="section-title">
-                <i class="fa-solid fa-microchip"></i> Key Skills & Expertise
-            </div>
-            <div class="skills-grid">
-                <span class="skill-badge">Lab Infrastructure Setup</span>
-                <span class="skill-badge">Silicon Bring-up</span>
-                <span class="skill-badge">Board Power-on</span>
-                <span class="skill-badge">EVT / DVT Validation</span>
-                <span class="skill-badge">Power Analysis</span>
-                <span class="skill-badge">ITIL Framework</span>
-                <span class="skill-badge">Incident & Service Management</span>
-                <span class="skill-badge">Asset & Inventory Management</span>
-                <span class="skill-badge">High-Precision Soldering (SMD/BGA)</span>
-                <span class="skill-badge">Generative AI Fundamentals</span>
-            </div>
-        </section>
-
-        <!-- Professional Experience Timeline -->
-        <section class="section-card">
-            <div class="section-title">
-                <i class="fa-solid fa-briefcase"></i> Work Experience
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-role">Technical Lead Analyst</div>
-                <div class="timeline-company">Tech Mahindra | April 2025 – Present</div>
-                <ul class="timeline-list">
-                    <li><strong>Google Client Project (April 2025 – June 2026):</strong> Managed lab infrastructure, hardware validation, and global lab operations/governance supporting Google client requirements.</li>
-                    <li>Driving technical training initiatives and upskilling in AI-related technical domains.</li>
+        <!-- 2. Key Responsibilities Handled -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-list-check"></i> 2. Key Responsibilities Handled</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul class="bullet-list">
+                    <li>IT Infrastructure Management & IT Lab Operations, Desktop, Laptop, Workstation & Server Support.</li>
+                    <li>Mobile Device Support & Hardware Deployment / Installation (L1/L2 Technical Support & Troubleshooting).</li>
+                    <li>Asset & Inventory Management / Supply Chain Operations, Validation Engineering & Vendor Coordination.</li>
+                    <li>Incident & Service Management / ITIL Practices, Project Coordination, Technical Documentation & SOPs.</li>
+                    <li>Process Improvement, Team Leadership, Stakeholder Communication & Generative AI Fundamentals.</li>
                 </ul>
             </div>
+        </div>
 
-            <div class="timeline-item">
-                <div class="timeline-role">Senior Infrastructure / Lab Support</div>
-                <div class="timeline-company">UST Global (Client: Intel) & Log-Us Business Systems | 2014 – 2025</div>
-                <ul class="timeline-list">
-                    <li>Provided long-term technical support for hardware development, power-on activities, and enterprise device debugging.</li>
-                    <li>Bridged hardware engineering and project management using ITIL frameworks.</li>
+        <!-- 3. Professional Experience -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-briefcase"></i> 3. Professional Experience</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="timeline-block">
+                    <div class="timeline-role">Technical Lead Analyst — Tech Mahindra</div>
+                    <div class="timeline-date">April 2025 – Present</div>
+                    <ul class="bullet-list">
+                        <li><strong>Google Client Project (April 2025 – June 2026):</strong> Managed lab infrastructure, hardware validation, and global lab operations/governance supporting Google client requirements.</li>
+                        <li>Driving technical training initiatives and upskilling in AI-related technical domains.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-role">Senior Infrastructure / Lab Support — UST Global (Client: Intel) & Log-Us</div>
+                    <div class="timeline-date">2014 – 2025</div>
+                    <ul class="bullet-list">
+                        <li>Provided long-term technical support for hardware development, power-on activities, and enterprise device debugging.</li>
+                        <li>Bridged hardware engineering and project management using ITIL frameworks.</li>
+                    </ul>
+                </div>
+
+                <div class="timeline-block">
+                    <div class="timeline-role">Service Engineer — Hitech Computers, Hubli</div>
+                    <div class="timeline-date">Previous Experience</div>
+                    <ul class="bullet-list">
+                        <li>Servicing and troubleshooting car audio/video systems, MP3 players, LCD monitors, digital cameras, and amplifiers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. Skills & Expertise -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-gears"></i> 4. Skills & Expertise</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <div class="skills-grid">
+                    <span class="skill-badge">Lab Infrastructure Setup</span>
+                    <span class="skill-badge">Silicon Bring-up</span>
+                    <span class="skill-badge">Board Power-on</span>
+                    <span class="skill-badge">EVT / DVT Validation</span>
+                    <span class="skill-badge">Power Analysis</span>
+                    <span class="skill-badge">ITIL Framework</span>
+                    <span class="skill-badge">Incident Management</span>
+                    <span class="skill-badge">Asset & Inventory Management (Ariba)</span>
+                    <span class="skill-badge">High-Precision Soldering (SMD/BGA)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. Tools & Technologies -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-wrench"></i> 5. Tools & Technologies</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul class="bullet-list">
+                    <li><strong>Equipment:</strong> Oscilloscopes, DAQ, Agilent Power Supplies, Logic Analyzers.</li>
+                    <li><strong>Devices:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi, NUC, ASUS Mini, Congatec Machines.</li>
+                    <li><strong>Software & Tools:</strong> SAP/Ariba Procurement, FPGA Image Flashing, EMMC/SD/USB OS Flashing tools.</li>
                 </ul>
             </div>
+        </div>
 
-            <div class="timeline-item">
-                <div class="timeline-role">Service Engineer</div>
-                <div class="timeline-company">Hitech Computers, Hubli</div>
-                <ul class="timeline-list">
-                    <li>Servicing and troubleshooting car audio/video systems, MP3 players, LCD monitors, digital cameras, and amplifiers.</li>
+        <!-- 6. Projects & Achievements -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-trophy"></i> 6. Projects & Achievements</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul class="bullet-list">
+                    <li>Successfully executed global lab operations governance and infrastructure stabilization for major client requirements.</li>
+                    <li>Spearheaded hardware validation and power optimization cycles ensuring zero-defect deliverables.</li>
                 </ul>
             </div>
-        </section>
+        </div>
 
-        <!-- Education & Certifications -->
-        <section class="section-card">
-            <div class="section-title">
-                <i class="fa-solid fa-graduation-cap"></i> Education & Certifications
+        <!-- 7. Education & Certifications -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-graduation-cap"></i> 7. Education & Certifications</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul class="bullet-list">
+                    <li><strong>B.Sc. in Information Technology:</strong> Sikkim Manipal University, Bangalore (2010 – 2013).</li>
+                    <li><strong>National Apprenticeship Certificate (NAC - BEL):</strong> Electronics Mechanic (3 Years Course) (1998 – 2001).</li>
+                    <li><strong>Certifications:</strong> ITIL® 4 Foundation, Google Generative AI Series, Skill Nation AI Program, PMP Concepts, ISO/IEC 42001:2023 AIMS Standard.</li>
+                </ul>
             </div>
-            <div class="skills-grid" style="flex-direction: column; gap: 12px;">
-                <div style="color: var(--text-muted);">
-                    <strong style="color: var(--text-main);">B.Sc. in Information Technology</strong> — Sikkim Manipal University, Bangalore (2010 – 2013)
-                </div>
-                <div style="color: var(--text-muted);">
-                    <strong style="color: var(--text-main);">National Apprenticeship Certificate (NAC - BEL)</strong> — Electronics Mechanic (1998 – 2001)
-                </div>
-                <div style="color: var(--text-muted);">
-                    <strong style="color: var(--text-main);">Certifications:</strong> ITIL® 4 Foundation, Google Generative AI Series, Skill Nation AI Program, PMP Concepts, ISO/IEC 42001:2023 AIMS Standard
-                </div>
+        </div>
+
+        <!-- 8. Personal Details -->
+        <div class="accordion-item">
+            <button class="accordion-header">
+                <span class="title-text"><i class="fa-solid fa-address-card"></i> 8. Personal Details</span>
+                <i class="fa-solid fa-chevron-down chevron"></i>
+            </button>
+            <div class="accordion-content">
+                <ul class="bullet-list">
+                    <li><strong>Date of Birth:</strong> 11/11/1978</li>
+                    <li><strong>Languages Known:</strong> English, Kannada, Hindi</li>
+                    <li><strong>Location:</strong> Sarjapura, Bengaluru, India</li>
+                </ul>
             </div>
-        </section>
+        </div>
+
     </div>
 
-    <!-- Copy Toast Popup -->
-    <div id="toast">Copied to Clipboard!</div>
-
-    <!-- Interactive JavaScript -->
+    <!-- JavaScript to Handle Accordion Click & Toggle -->
     <script>
-        function toggleTheme() {
-            document.body.classList.toggle('light-mode');
-            const isLight = document.body.classList.contains('light-mode');
-            document.getElementById('theme-icon').className = isLight ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
-            document.getElementById('theme-text').innerText = isLight ? 'Light Mode' : 'Dark Mode';
-        }
+        const headers = document.querySelectorAll('.accordion-header');
 
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text);
-            const toast = document.getElementById("toast");
-            toast.className = "show";
-            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-        }
+        headers.forEach(header => {
+            header.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const content = this.nextElementSibling;
+
+                if (content.style.maxHeight) {
+                    content.style.maxHeight = null;
+                    content.style.paddingTop = '0px';
+                    content.style.paddingBottom = '0px';
+                } else {
+                    content.style.paddingTop = '15px';
+                    content.style.paddingBottom = '20px';
+                    content.style.maxHeight = content.scrollHeight + 40 + "px";
+                }
+            });
+        });
     </script>
 </body>
 </html>
