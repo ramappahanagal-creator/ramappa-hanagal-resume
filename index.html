@@ -10,23 +10,23 @@
             --card-bg: #ffffff;
             --accent-gold: #d97706;
             --text-main: #1f2937;
-            --border-line: #e5e7eb;
+            --border-line: #cbd5e1;
         }
 
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
+            line-height: 1.45;
             color: var(--text-main);
             max-width: 900px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
             background-color: var(--bg-body);
         }
 
         .resume-wrapper {
             background: var(--card-bg);
-            padding: 35px;
-            border-radius: 10px;
+            padding: 25px;
+            border-radius: 8px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             border-top: 5px solid var(--accent-gold);
         }
@@ -34,16 +34,16 @@
         .profile-top {
             display: flex;
             align-items: center;
-            gap: 25px;
+            gap: 20px;
             border-bottom: 2px solid var(--border-line);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
+            padding-bottom: 15px;
+            margin-bottom: 18px;
             position: relative;
         }
 
         .profile-avatar {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid var(--accent-gold);
@@ -52,25 +52,25 @@
         }
 
         .profile-info h1 {
-            margin: 0 0 5px 0;
+            margin: 0 0 3px 0;
             color: #111827;
-            font-size: 1.8em;
+            font-size: 1.6em;
             letter-spacing: 0.5px;
         }
 
         .profile-info .job-role {
-            margin: 0 0 10px 0;
+            margin: 0 0 8px 0;
             color: #4b5563;
-            font-size: 1.05em;
+            font-size: 0.95em;
             font-weight: 600;
         }
 
         .contact-box {
-            font-size: 0.88em;
+            font-size: 0.82em;
             color: #374151;
             background: #f9fafb;
-            padding: 8px 12px;
-            border-radius: 5px;
+            padding: 6px 10px;
+            border-radius: 4px;
             border-left: 3px solid var(--accent-gold);
         }
 
@@ -87,13 +87,12 @@
             background-color: #1f2937;
             color: white;
             border: none;
-            padding: 10px 16px;
-            font-size: 0.9em;
+            padding: 8px 14px;
+            font-size: 0.85em;
             font-weight: bold;
-            border-radius: 6px;
+            border-radius: 5px;
             cursor: pointer;
             box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            transition: background 0.2s;
         }
 
         .print-btn:hover {
@@ -101,11 +100,13 @@
         }
 
         .section-box {
-            margin-bottom: 20px;
-            border-radius: 6px;
+            margin-bottom: 12px;
+            border-radius: 5px;
             background: #ffffff;
             border: 1px solid var(--border-line);
             overflow: hidden;
+            page-break-inside: avoid;
+            break-inside: avoid;
         }
 
         .section-box:nth-of-type(1) .section-header { background-color: #f8fafc; color: #0f172a; border-left: 4px solid #0f172a; }
@@ -119,32 +120,43 @@
         .section-box:nth-of-type(9) .section-header { background-color: #fdf8f6; color: #7c2d12; border-left: 4px solid #7c2d12; }
 
         .section-header {
-            font-size: 1.05em;
+            font-size: 0.98em;
             font-weight: bold;
-            padding: 12px 15px;
+            padding: 8px 12px;
         }
 
         .section-body {
-            padding: 15px 20px;
+            padding: 10px 14px;
             border-top: 1px solid var(--border-line);
             background-color: #ffffff;
+            font-size: 0.9em;
         }
 
         ul {
-            padding-left: 20px;
+            padding-left: 18px;
             margin: 0;
         }
 
         li {
-            margin-bottom: 6px;
+            margin-bottom: 4px;
         }
 
+        p {
+            margin: 0 0 5px 0;
+        }
+
+        /* Print Settings for Strict A4 3-4 Page Optimization */
         @media print {
+            @page {
+                size: A4;
+                margin: 10mm;
+            }
             body {
                 background-color: white !important;
                 padding: 0;
                 margin: 0;
                 max-width: 100%;
+                font-size: 11pt;
             }
             .resume-wrapper {
                 box-shadow: none;
@@ -156,7 +168,8 @@
             }
             .section-box {
                 break-inside: avoid;
-                margin-bottom: 15px;
+                page-break-inside: avoid;
+                margin-bottom: 10px;
                 border: 1px solid #9ca3af !important;
             }
         }
@@ -271,7 +284,7 @@
                 <li>National Apprenticeship Certificate (NAC) — BEL, Bangalore (2001 – 2002)</li>
                 <li>Hardware & Networking Certification (2008 – 2009)</li>
             </ul>
-            <p><strong>Certifications (30+ Total):</strong></p>
+            <p style="margin-top: 6px;"><strong>Certifications (30+ Total):</strong></p>
             <ul>
                 <li><strong>AI & Generative AI:</strong> Skill Nation AI Program, Google Gen AI Courses, Tech Mahindra AI 101, ISO/IEC 42001:2023 AIMS Standard</li>
                 <li><strong>IT, Project Management & Operations:</strong> ITIL® 4 Foundation, PMP Training (35 Hours), Future Leaders Program, Supply Chain Foundations</li>
