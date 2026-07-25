@@ -10,7 +10,6 @@
 
     <style>
         :root {
-            /* Updated to a cleaner, slightly brighter professional dark/navy tone */
             --bg-color: #1e293b;
             --card-bg: #334155;
             --text-main: #f8fafc;
@@ -198,6 +197,14 @@
             margin-bottom: 8px;
         }
 
+        .sub-category {
+            font-weight: 700;
+            color: var(--text-main);
+            margin-top: 12px;
+            margin-bottom: 4px;
+            display: block;
+        }
+
         .skills-grid {
             display: flex;
             flex-wrap: wrap;
@@ -240,7 +247,6 @@
         <!-- Header Card with Profile Image -->
         <header class="profile-card">
             <div class="profile-img-container">
-                <!-- ಇಲ್ಲಿ ನಿಮ್ಮ ಗಿಟ್‌ಹಬ್‌ನಲ್ಲಿರುವ ಫೋಟೋದ ಸರಿಯಾದ ಹೆಸರನ್ನು (ಉದಾಹರಣೆಗೆ my-photo.jpg) ಹಾಕಿರಿ -->
                 <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-img" 
                      onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ramappa+Hanagal&background=38bdf8&color=0f172a&size=128';">
             </div>
@@ -373,7 +379,18 @@
                 <ul class="bullet-list">
                     <li><strong>B.Sc. in Information Technology:</strong> Sikkim Manipal University, Bangalore (2010 – 2013).</li>
                     <li><strong>National Apprenticeship Certificate (NAC - BEL):</strong> Electronics Mechanic (3 Years Course) (1998 – 2001).</li>
-                    <li><strong>Certifications:</strong> ITIL® 4 Foundation, Google Generative AI Series, Skill Nation AI Program, PMP Concepts, ISO/IEC 42001:2023 AIMS Standard.</li>
+                </ul>
+
+                <span class="sub-category"><i class="fa-solid fa-certificate"></i> Professional Certifications & Continuous Learning:</span>
+                <ul class="bullet-list">
+                    <li><strong>ITIL® 4 Foundation</strong> — Service Management Framework.</li>
+                    <li><strong>Google Generative AI & AI Fundamentals Series</strong> — Generative AI, Cloud & AI Technologies.</li>
+                    <li><strong>Skill Nation AI & Professional Programs</strong> — Advanced Data & AI Tools.</li>
+                    <li><strong>LinkedIn Learning Certifications</strong> — Project Management, IT Infrastructure, Leadership & Technical Operations.</li>
+                    <li><strong>Coursera Specializations</strong> — Cloud Computing, IT Support, Hardware Troubleshooting & Cybersecurity Foundations.</li>
+                    <li><strong>BitDegree (BitenX) Technical & Professional Badges</strong> — Programming Essentials, Web Technologies & Digital Skills.</li>
+                    <li><strong>ISO/IEC 42001:2023 AIMS Standard</strong> — Artificial Intelligence Management System Concepts.</li>
+                    <li><strong>Project Management (PMP Training Concepts)</strong> — Operations & Resource Management.</li>
                 </ul>
             </div>
         </details>
