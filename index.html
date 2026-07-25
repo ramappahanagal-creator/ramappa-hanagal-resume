@@ -100,30 +100,28 @@
             background-color: #374151;
         }
 
-        details {
-            margin-bottom: 12px;
+        .section-box {
+            margin-bottom: 20px;
             border-radius: 6px;
             background: #ffffff;
             border: 1px solid var(--border-line);
             overflow: hidden;
         }
 
-        details:nth-of-type(1) summary { background-color: #f8fafc; color: #0f172a; border-left: 4px solid #0f172a; }
-        details:nth-of-type(2) summary { background-color: #f0fdf4; color: #166534; border-left: 4px solid #166534; }
-        details:nth-of-type(3) summary { background-color: #eff6ff; color: #1e40af; border-left: 4px solid #1e40af; }
-        details:nth-of-type(4) summary { background-color: #fdf4ff; color: #86198f; border-left: 4px solid #86198f; }
-        details:nth-of-type(5) summary { background-color: #fff7ed; color: #c2410c; border-left: 4px solid #c2410c; }
-        details:nth-of-type(6) summary { background-color: #fef2f2; color: #991b1b; border-left: 4px solid #991b1b; }
-        details:nth-of-type(7) summary { background-color: #f5f3ff; color: #5b21b6; border-left: 4px solid #5b21b6; }
-        details:nth-of-type(8) summary { background-color: #ecfeff; color: #155e75; border-left: 4px solid #155e75; }
-        details:nth-of-type(9) summary { background-color: #fdf8f6; color: #7c2d12; border-left: 4px solid #7c2d12; }
+        .section-box:nth-of-type(1) .section-header { background-color: #f8fafc; color: #0f172a; border-left: 4px solid #0f172a; }
+        .section-box:nth-of-type(2) .section-header { background-color: #f0fdf4; color: #166534; border-left: 4px solid #166534; }
+        .section-box:nth-of-type(3) .section-header { background-color: #eff6ff; color: #1e40af; border-left: 4px solid #1e40af; }
+        .section-box:nth-of-type(4) .section-header { background-color: #fdf4ff; color: #86198f; border-left: 4px solid #86198f; }
+        .section-box:nth-of-type(5) .section-header { background-color: #fff7ed; color: #c2410c; border-left: 4px solid #c2410c; }
+        .section-box:nth-of-type(6) .section-header { background-color: #fef2f2; color: #991b1b; border-left: 4px solid #991b1b; }
+        .section-box:nth-of-type(7) .section-header { background-color: #f5f3ff; color: #5b21b6; border-left: 4px solid #5b21b6; }
+        .section-box:nth-of-type(8) .section-header { background-color: #ecfeff; color: #155e75; border-left: 4px solid #155e75; }
+        .section-box:nth-of-type(9) .section-header { background-color: #fdf8f6; color: #7c2d12; border-left: 4px solid #7c2d12; }
 
-        summary {
+        .section-header {
             font-size: 1.05em;
             font-weight: bold;
             padding: 12px 15px;
-            cursor: pointer;
-            outline: none;
         }
 
         .section-body {
@@ -156,9 +154,9 @@
             .print-btn {
                 display: none !important;
             }
-            details {
+            .section-box {
                 break-inside: avoid;
-                margin-bottom: 10px;
+                margin-bottom: 15px;
                 border: 1px solid #9ca3af !important;
             }
         }
@@ -169,8 +167,7 @@
 <div class="resume-wrapper">
     
     <div class="profile-top">
-        <!-- JavaScript function added to force expand all 9 options before printing -->
-        <button class="print-btn" onclick="downloadPDF()">📥 Download PDF</button>
+        <button class="print-btn" onclick="window.print()">📥 Download PDF</button>
         <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-avatar">
         <div class="profile-info">
             <h1>RAMAPPA HANAGAL</h1>
@@ -182,15 +179,17 @@
         </div>
     </div>
 
-    <details>
-        <summary>1. Professional Summary</summary>
+    <!-- 1. Professional Summary -->
+    <div class="section-box">
+        <div class="section-header">1. Professional Summary</div>
         <div class="section-body">
             <p>Senior Technical Lead Analyst with over 17 years of extensive multi-domain experience spanning global lab infrastructure operations, hardware validation, component-level debugging, silicon bring-up, and end-to-end project management. Proven expertise in leading cross-functional engineering teams, establishing rigorous governance models, and ensuring seamless execution across high-impact enterprise projects for global industry leaders. Adept at bridging advanced technologies, modern AI tooling, and operational excellence to drive zero-downtime environments, compliance, and optimized technical workflows.</p>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>2. Key Responsibilities Handled</summary>
+    <!-- 2. Key Responsibilities Handled -->
+    <div class="section-box">
+        <div class="section-header">2. Key Responsibilities Handled</div>
         <div class="section-body">
             <ul>
                 <li>Spearheaded global lab infrastructure operations, establishing rigorous governance models, compliance frameworks, and seamless hardware validation workflows.</li>
@@ -211,10 +210,11 @@
                 <li>Designed and executed custom test fixtures and jigs to enhance diagnostic accuracy and speed up board-level testing cycles.</li>
             </ul>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>3. Professional Experience</summary>
+    <!-- 3. Professional Experience -->
+    <div class="section-box">
+        <div class="section-header">3. Professional Experience</div>
         <div class="section-body">
             <ul>
                 <li><strong>Tech Mahindra (June 2026 – Present):</strong> Undergoing Technical Training and Advanced AI Applications / AI Accelerating Program</li>
@@ -224,30 +224,33 @@
                 <li><strong>Hi-tech Computers & Mangala Electronics, Hubli (2001 – 2005):</strong> Audio & Video Servicing Engineer</li>
             </ul>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>4. Skills and Expertise</summary>
+    <!-- 4. Skills and Expertise -->
+    <div class="section-box">
+        <div class="section-header">4. Skills and Expertise</div>
         <div class="section-body">
             <ul>
                 <li><strong>Mobile Device Supported Brands:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi</li>
                 <li><strong>Core Technical Skills:</strong> Silicon Bring-Up, Board Power-On, Hardware Validation & Debugging, High-Precision Soldering (SMD/BGA), Lab Infrastructure Management, Lab Admin Operations, Supply Chain Management, Procurement, Vendor Management, Power Analysis, Thermal Management, Signal Integrity.</li>
             </ul>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>5. Tools and Technologies</summary>
+    <!-- 5. Tools and Technologies -->
+    <div class="section-box">
+        <div class="section-header">5. Tools and Technologies</div>
         <div class="section-body">
             <ul>
                 <li><strong>Hardware & Measuring Equipment:</strong> Oscilloscope, Digital Multimeter (DMM), DAQ Systems, DC Power Supply, Logic Analyzers, and other specialized lab testing equipment.</li>
                 <li><strong>Supported Devices:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi.</li>
             </ul>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>6. Projects and Achievements</summary>
+    <!-- 6. Projects and Achievements -->
+    <div class="section-box">
+        <div class="section-header">6. Projects and Achievements</div>
         <div class="section-body">
             <ul>
                 <li>Successfully directed global lab infrastructure setup and validation workflows for major tier-1 client projects, achieving benchmarked turnaround time reductions and zero-downtime lab audits.</li>
@@ -255,10 +258,11 @@
                 <li>Spearheaded digital transformation and workflow efficiency drives by integrating advanced automated tracking, inventory governance, and team training modules.</li>
             </ul>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>7. Education and Certifications</summary>
+    <!-- 7. Education and Certifications -->
+    <div class="section-box">
+        <div class="section-header">7. Education and Certifications</div>
         <div class="section-body">
             <p><strong>Education:</strong></p>
             <ul>
@@ -275,10 +279,11 @@
                 <li><strong>Additional Credentials:</strong> Global Lab Infrastructure Governance & Compliance Modules, Mobile Device 5G Architecture & Teardown Specialist Badges, Silicon Bring-Up & Power Analysis Methodologies, Technical Workflow Automation & Enterprise Tooling Certifications</li>
             </ul>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>8. Professional Details</summary>
+    <!-- 8. Professional Details -->
+    <div class="section-box">
+        <div class="section-header">8. Professional Details</div>
         <div class="section-body">
             <ul>
                 <li><strong>Name:</strong> Ramappa Hanagal</li>
@@ -289,10 +294,11 @@
                 <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">linkedin.com/in/ramappa-hanagal</a></li>
             </ul>
         </div>
-    </details>
+    </div>
 
-    <details>
-        <summary>9. AI Tools & Generative AI Skills</summary>
+    <!-- 9. AI Tools & Generative AI Skills -->
+    <div class="section-box">
+        <div class="section-header">9. AI Tools & Generative AI Skills</div>
         <div class="section-body">
             <ul>
                 <li>Google AI Studio</li>
@@ -310,21 +316,9 @@
                 <li>Tech Mahindra AI 101 & Gen AI Fundamentals</li>
             </ul>
         </div>
-    </details>
+    </div>
 
 </div>
-
-<!-- JavaScript to force open all details elements when printing/downloading PDF -->
-<script>
-    function downloadPDF() {
-        const detailsElements = document.querySelectorAll('details');
-        detailsElements.forEach(detail => {
-            detail.setAttribute('open', 'true');
-        });
-        
-        window.print();
-    }
-</script>
 
 </body>
 </html>
