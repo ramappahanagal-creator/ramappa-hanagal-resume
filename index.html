@@ -62,7 +62,7 @@
             gap: 8px;
         }
 
-        /* Header Section - Top Profile View */
+        /* Header Section */
         header {
             background: linear-gradient(135deg, var(--dark-bg), var(--primary-color));
             color: white;
@@ -109,7 +109,6 @@
             font-size: 2.3rem;
             font-weight: 700;
             margin-bottom: 5px;
-            letter-spacing: -0.5px;
             color: #ffffff;
         }
 
@@ -182,6 +181,10 @@
             align-items: center;
             font-weight: 600;
             color: var(--text-main);
+        }
+
+        .accordion-header:hover {
+            background-color: #f1f5f9;
         }
 
         .accordion-content {
@@ -281,10 +284,9 @@
         </button>
     </div>
 
-    <!-- 1. TOP HEADER SECTION (Photo, Name, Designation & Contact Details) -->
+    <!-- 1. HEADER SECTION -->
     <header>
         <div class="header-content">
-            <!-- Profile Photo -->
             <div class="avatar">
                 <img src="https://raw.githubusercontent.com/ramappahanagal-creator/ramappa-hanagal-resume/main/my-photo.jpg" alt="Ramappa Hanagal" onerror="this.style.display='none'; this.parentElement.innerText='RH';">
             </div>
@@ -326,15 +328,42 @@
                 <p class="editable">Calibration and setup of high-precision lab tools including Oscilloscopes, DAQ, Agilent Power Supplies, and Logic Analyzers.</p>
             </div>
         </div>
+
+        <div class="accordion-item">
+            <div class="accordion-header" onclick="toggleAccordion(this)">
+                <span>💻 2. Silicon Bring-Up & Hardware Validation</span>
+                <i class="fa-solid fa-chevron-down"></i>
+            </div>
+            <div class="accordion-content">
+                <span class="sub-headline">Power-On & Testing:</span>
+                <p class="editable">Hands-on support for early silicon bring-up, hardware validation tests, stability verification, and telemetry logging.</p>
+                <span class="sub-headline">Device Troubleshooting:</span>
+                <p class="editable">Deep troubleshooting and performance profiling on leading consumer electronics and smart device platforms.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- 4. EDUCATION & CERTIFICATIONS -->
+    <!-- 4. CORE SKILLS -->
+    <div class="section-card">
+        <div class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Core Skills & Expertise</div>
+        <ul class="skills-list editable">
+            <li>Lab Infrastructure Setup, Governance & Maintenance</li>
+            <li>Hardware Validation & Silicon Bring-Up Support</li>
+            <li>Oscilloscopes, DAQ, Logic Analyzers & Power Supplies</li>
+            <li>ESD Protocols & Safety Compliance</li>
+            <li>IT Asset Management & Inventory Tracking</li>
+            <li>AI Tools & Prompt Engineering Basics</li>
+        </ul>
+    </div>
+
+    <!-- 5. EDUCATION & CERTIFICATIONS -->
     <div class="section-card">
         <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Certifications</div>
 
         <div class="tab-buttons">
             <button class="tab-btn active" onclick="switchTab(event, 'tab-edu')">Education</button>
             <button class="tab-btn" onclick="switchTab(event, 'tab-ai')">AI & Gen AI</button>
+            <button class="tab-btn" onclick="switchTab(event, 'tab-cert')">Other Certifications</button>
         </div>
 
         <div id="tab-edu" class="tab-content active">
@@ -350,14 +379,23 @@
                 <li><strong>Google Generative AI Series</strong> — Intro to Gen AI, Gen AI Apps</li>
             </ul>
         </div>
+
+        <div id="tab-cert" class="tab-content">
+            <ul class="skills-list">
+                <li><strong>ITIL® 4 Foundation</strong> — IT Service Management</li>
+                <li><strong>PMP Training</strong> — Project Management Professional concepts</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- 5. PERSONAL DETAILS -->
+    <!-- 6. PERSONAL DETAILS -->
     <div class="section-card">
         <div class="section-title"><i class="fa-solid fa-id-card"></i> Personal Details</div>
         <div class="details-grid">
             <div class="details-item"><strong>Date of Birth</strong> 11/11/1978</div>
             <div class="details-item"><strong>Languages Known</strong> English, Kannada, Hindi</div>
+            <div class="details-item"><strong>Nationality</strong> Indian</div>
+            <div class="details-item"><strong>Current Location</strong> Sarjapura, Bengaluru</div>
         </div>
     </div>
 
