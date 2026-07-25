@@ -15,12 +15,12 @@
             --secondary-color: #2563eb;
             --accent-color: #0d9488;
             --dark-bg: #0f172a;
-            --light-bg: #f8fafc;
+            --page-bg: #f1f5f9; /* Soft light background */
             --card-bg: #ffffff;
             --text-main: #334155;
             --text-muted: #64748b;
-            --border-color: #e2e8f0;
-            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --border-color: #cbd5e1;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -1px rgba(0, 0, 0, 0.04);
         }
 
         * {
@@ -31,7 +31,7 @@
         }
 
         body {
-            background-color: var(--light-bg);
+            background-color: var(--page-bg);
             color: var(--text-main);
             line-height: 1.6;
             padding: 20px;
@@ -142,61 +142,58 @@
             color: #ffffff;
         }
 
-        /* Card Section Styling */
+        /* Collapsible Section Cards with Different Backgrounds */
         .section-card {
             background: var(--card-bg);
             border-radius: 12px;
-            padding: 25px 30px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             box-shadow: var(--shadow);
             border: 1px solid var(--border-color);
-        }
-
-        .section-title {
-            font-size: 1.3rem;
-            color: var(--primary-color);
-            border-bottom: 2px solid var(--border-color);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-
-        /* Accordion Styles */
-        .accordion-item {
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            margin-bottom: 12px;
             overflow: hidden;
         }
 
-        .accordion-header {
-            background-color: #f8fafc;
-            padding: 15px 20px;
+        /* Unique background tints for each section header */
+        .sec-about { background-color: #fdf4ff; border-left: 6px solid #c084fc; }
+        .sec-skills { background-color: #f0fdf4; border-left: 6px solid #4ade80; }
+        .sec-tools { background-color: #fff7ed; border-left: 6px solid #fb923c; }
+        .sec-exp { background-color: #eff6ff; border-left: 6px solid #60a5fa; }
+        .sec-edu { background-color: #fdf2f8; border-left: 6px solid #f472b6; }
+        .sec-personal { background-color: #ecfeff; border-left: 6px solid #22d3ee; }
+
+        .section-header {
+            padding: 20px 25px;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 1.25rem;
+            color: var(--primary-color);
             font-weight: 600;
-            color: var(--text-main);
+            transition: filter 0.2s;
         }
 
-        .accordion-header:hover {
-            background-color: #f1f5f9;
+        .section-header:hover {
+            filter: brightness(95%);
         }
 
-        .accordion-content {
-            padding: 20px;
-            background-color: #ffffff;
+        .section-content {
+            display: none; /* Initially hidden */
+            padding: 20px 25px;
             border-top: 1px solid var(--border-color);
+            background-color: #ffffff;
+        }
+
+        .content-box {
+            background-color: #f8fafc;
+            padding: 18px;
+            border-radius: 8px;
+            margin-top: 15px;
+            border-left: 4px solid var(--secondary-color);
         }
 
         .sub-headline {
             font-weight: 600;
-            color: var(--secondary-color);
-            margin-top: 12px;
+            color: var(--primary-color);
             margin-bottom: 6px;
             display: block;
         }
@@ -204,55 +201,25 @@
         ul.skills-list {
             list-style-type: disc;
             padding-left: 20px;
+            margin-top: 10px;
         }
 
         ul.skills-list li {
-            margin-bottom: 6px;
-        }
-
-        /* Tabs */
-        .tab-buttons {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .tab-btn {
-            background-color: #e2e8f0;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--text-main);
-        }
-
-        .tab-btn.active {
-            background-color: var(--secondary-color);
-            color: white;
-        }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
+            margin-bottom: 8px;
         }
 
         .details-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
+            margin-top: 10px;
         }
 
         .details-item {
             background: #f8fafc;
             padding: 12px 15px;
             border-radius: 6px;
-            border-left: 3px solid var(--secondary-color);
+            border-left: 3px solid var(--accent-color);
         }
 
         .details-item strong {
@@ -306,121 +273,128 @@
 
     <!-- 2. ABOUT ME -->
     <div class="section-card">
-        <div class="section-title"><i class="fa-solid fa-address-card"></i> About Me</div>
-        <p class="editable">
-            Hardware, Silicon Bring-Up & AI-Skilled Technical Professional with 17+ years of extensive experience in IT infrastructure support, hardware validation, power analysis, and laboratory operations. Proven track record in supporting complex silicon bring-up, power-on activities, troubleshooting leading smartphone/device platforms, and optimizing technical workflows.
-        </p>
-    </div>
-
-    <!-- 3. HANDLED RESPONSIBILITIES -->
-    <div class="section-card">
-        <div class="section-title"><i class="fa-solid fa-list-check"></i> Handled Responsibilities</div>
-        
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>⚙️ 1. Lab Infrastructure & Operations Management</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <span class="sub-headline">Global Lab Governance:</span>
-                <p class="editable">End-to-end management of IT lab environments, ESD safety protocols, 100% audit readiness, and high-value asset tracking.</p>
-                <span class="sub-headline">Equipment Maintenance:</span>
-                <p class="editable">Calibration and setup of high-precision lab tools including Oscilloscopes, DAQ, Agilent Power Supplies, and Logic Analyzers.</p>
-            </div>
+        <div class="section-header sec-about" onclick="toggleSection(this)">
+            <span><i class="fa-solid fa-address-card" style="margin-right: 10px;"></i> About Me</span>
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
-
-        <div class="accordion-item">
-            <div class="accordion-header" onclick="toggleAccordion(this)">
-                <span>💻 2. Silicon Bring-Up & Hardware Validation</span>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="accordion-content">
-                <span class="sub-headline">Power-On & Testing:</span>
-                <p class="editable">Hands-on support for early silicon bring-up, hardware validation tests, stability verification, and telemetry logging.</p>
-                <span class="sub-headline">Device Troubleshooting:</span>
-                <p class="editable">Deep troubleshooting and performance profiling on leading consumer electronics and smart device platforms.</p>
-            </div>
+        <div class="section-content">
+            <p class="editable">
+                Hardware, Silicon Bring-Up & AI-Skilled Technical Professional with 17+ years of extensive experience in IT infrastructure support, hardware validation, high-density PCB layout analysis, and laboratory operations. Proven track record in supporting complex silicon bring-up, power-on activities, troubleshooting leading platforms, and integrating enterprise-level frameworks.
+            </p>
         </div>
     </div>
 
-    <!-- 4. CORE SKILLS -->
+    <!-- 3. CORE SKILLS & EXPERTISE -->
     <div class="section-card">
-        <div class="section-title"><i class="fa-solid fa-screwdriver-wrench"></i> Core Skills & Expertise</div>
-        <ul class="skills-list editable">
-            <li>Lab Infrastructure Setup, Governance & Maintenance</li>
-            <li>Hardware Validation & Silicon Bring-Up Support</li>
-            <li>Oscilloscopes, DAQ, Logic Analyzers & Power Supplies</li>
-            <li>ESD Protocols & Safety Compliance</li>
-            <li>IT Asset Management & Inventory Tracking</li>
-            <li>AI Tools & Prompt Engineering Basics</li>
-        </ul>
+        <div class="section-header sec-skills" onclick="toggleSection(this)">
+            <span><i class="fa-solid fa-screwdriver-wrench" style="margin-right: 10px;"></i> Core Skills & Expertise</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="section-content">
+            <ul class="skills-list editable">
+                <li>Lab Infrastructure Setup, Governance & Maintenance</li>
+                <li>Hardware Validation, Silicon Bring-Up & PCB Layout Analysis</li>
+                <li>ITIL Framework & SRE Operations</li>
+                <li>IT Asset Management, Supply Chain & Inventory Tracking</li>
+                <li>AI Tools & Prompt Engineering Integration</li>
+            </ul>
+        </div>
     </div>
 
-    <!-- 5. EDUCATION & CERTIFICATIONS -->
+    <!-- 4. KEY TECHNICAL STRENGTHS / TOOLS -->
     <div class="section-card">
-        <div class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education & Certifications</div>
-
-        <div class="tab-buttons">
-            <button class="tab-btn active" onclick="switchTab(event, 'tab-edu')">Education</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-ai')">AI & Gen AI</button>
-            <button class="tab-btn" onclick="switchTab(event, 'tab-cert')">Other Certifications</button>
+        <div class="section-header sec-tools" onclick="toggleSection(this)">
+            <span><i class="fa-solid fa-tools" style="margin-right: 10px;"></i> Key Technical Strengths / Tools</span>
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
+        <div class="section-content">
+            <ul class="skills-list editable">
+                <li><strong>Lab Equipment:</strong> Oscilloscopes, DAQ, Agilent Power Supplies, Logic Analyzers, and precision measurement tools.</li>
+                <li><strong>Hardware & Debugging:</strong> Silicon bring-up, power-on activities, high-density PCB layout analysis, and hardware debugging.</li>
+                <li><strong>Infrastructure & Governance:</strong> Lab infrastructure governance, ESD safety protocols, and audit readiness.</li>
+                <li><strong>Software & Cloud:</strong> Cloud infrastructure concepts, AI integration, prompt engineering basics, and asset inventory systems.</li>
+            </ul>
+        </div>
+    </div>
 
-        <div id="tab-edu" class="tab-content active">
-            <ul class="skills-list">
+    <!-- 5. PROFESSIONAL EXPERIENCE -->
+    <div class="section-card">
+        <div class="section-header sec-exp" onclick="toggleSection(this)">
+            <span><i class="fa-solid fa-briefcase" style="margin-right: 10px;"></i> Professional Experience</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="section-content">
+            <div class="content-box" style="margin-top: 0;">
+                <span class="sub-headline">🚀 Technical Lead Analyst — Tech Mahindra</span>
+                <p class="editable" style="margin-bottom: 8px;"><strong>Role Overview:</strong> Overseeing advanced lab infrastructure, silicon validation, hardware testing operations, and global lab governance protocols.</p>
+                <p class="editable"><strong>Key Contributions:</strong> Managing high-precision equipment, ensuring 100% audit readiness, and optimizing infrastructure workflows.</p>
+            </div>
+
+            <div class="content-box">
+                <span class="sub-headline">🏢 Senior Infrastructure / Lab Support — UST Global (Client: Intel) & Log-Us Business Systems</span>
+                <p class="editable" style="margin-bottom: 8px;"><strong>Role Overview:</strong> Provided long-term technical support for hardware development, power-on activities, and enterprise device debugging.</p>
+                <p class="editable"><strong>Key Contributions:</strong> Bridged the gap between hardware engineering and enterprise project management using ITIL frameworks and advanced diagnostics.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. EDUCATION & CERTIFICATIONS -->
+    <div class="section-card">
+        <div class="section-header sec-edu" onclick="toggleSection(this)">
+            <span><i class="fa-solid fa-graduation-cap" style="margin-right: 10px;"></i> Education & Certifications</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="section-content">
+            <span class="sub-headline">Education</span>
+            <ul class="skills-list" style="margin-bottom: 15px;">
                 <li><strong>B.Sc. in Information Technology</strong> — Sikkim Manipal University, Bangalore (2013)</li>
                 <li><strong>National Apprenticeship Certificate (NAC)</strong> — BEL, Bangalore</li>
             </ul>
-        </div>
 
-        <div id="tab-ai" class="tab-content">
+            <span class="sub-headline">AI & Gen AI / Certifications</span>
             <ul class="skills-list">
                 <li><strong>Skill Nation AI Program & AI Dashboard</strong> — Certificate of Completion</li>
                 <li><strong>Google Generative AI Series</strong> — Intro to Gen AI, Gen AI Apps</li>
-            </ul>
-        </div>
-
-        <div id="tab-cert" class="tab-content">
-            <ul class="skills-list">
                 <li><strong>ITIL® 4 Foundation</strong> — IT Service Management</li>
                 <li><strong>PMP Training</strong> — Project Management Professional concepts</li>
             </ul>
         </div>
     </div>
 
-    <!-- 6. PERSONAL DETAILS -->
+    <!-- 7. PERSONAL DETAILS -->
     <div class="section-card">
-        <div class="section-title"><i class="fa-solid fa-id-card"></i> Personal Details</div>
-        <div class="details-grid">
-            <div class="details-item"><strong>Date of Birth</strong> 11/11/1978</div>
-            <div class="details-item"><strong>Languages Known</strong> English, Kannada, Hindi</div>
-            <div class="details-item"><strong>Nationality</strong> Indian</div>
-            <div class="details-item"><strong>Current Location</strong> Sarjapura, Bengaluru</div>
+        <div class="section-header sec-personal" onclick="toggleSection(this)">
+            <span><i class="fa-solid fa-id-card" style="margin-right: 10px;"></i> Personal Details</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div class="section-content">
+            <div class="details-grid">
+                <div class="details-item"><strong>Date of Birth</strong> 11/11/1978</div>
+                <div class="details-item"><strong>Languages Known</strong> English, Kannada, Hindi</div>
+                <div class="details-item"><strong>Nationality</strong> Indian</div>
+                <div class="details-item"><strong>Current Location</strong> Sarjapura, Bengaluru</div>
+            </div>
         </div>
     </div>
 
 </div>
 
 <script>
-    function toggleAccordion(headerElement) {
+    // Function to toggle each main section open/close on click
+    function toggleSection(headerElement) {
         const content = headerElement.nextElementSibling;
-        const icon = headerElement.querySelector('i');
+        const icon = headerElement.querySelector('.fa-chevron-down, .fa-chevron-up');
+        
         if (content.style.display === "block") {
             content.style.display = "none";
-            if(icon) icon.className = 'fa-solid fa-chevron-down';
+            if (icon) icon.className = "fa-solid fa-chevron-down";
         } else {
             content.style.display = "block";
-            if(icon) icon.className = 'fa-solid fa-chevron-up';
+            if (icon) icon.className = "fa-solid fa-chevron-up";
         }
     }
 
-    function switchTab(event, tabId) {
-        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-        document.getElementById(tabId).classList.add('active');
-        event.currentTarget.classList.add('active');
-    }
-
+    // Edit Mode Toggle Function
     let isEditMode = false;
     function toggleEditMode() {
         isEditMode = !isEditMode;
