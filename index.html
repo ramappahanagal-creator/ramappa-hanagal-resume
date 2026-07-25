@@ -6,151 +6,131 @@
     <title>Ramappa Hanagal - Senior Technical Lead Analyst</title>
     <style>
         :root {
-            --bg-main: #090d16;
+            --bg-body: #0b0f19;
             --card-bg: #ffffff;
-            --primary-blue: #1e3a8a;
-            --accent-color: #2563eb;
-            --text-dark: #1e293b;
-            --border-color: #cbd5e1;
+            --header-bg: #1e293b;
+            --accent-gold: #d97706;
+            --text-main: #1f2937;
+            --border-line: #e5e7eb;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-dark);
+            color: var(--text-main);
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-            background-color: var(--bg-main);
+            background-color: var(--bg-body);
         }
 
-        .profile-container {
+        .resume-wrapper {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-            border-top: 6px solid var(--accent-color);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            border-top: 5px solid var(--accent-gold);
         }
 
-        .profile-header {
+        .profile-top {
             display: flex;
             align-items: center;
             gap: 25px;
-            border-bottom: 2px solid #e2e8f0;
+            border-bottom: 2px solid var(--border-line);
             padding-bottom: 20px;
             margin-bottom: 25px;
             position: relative;
         }
 
-        .profile-pic {
-            width: 130px;
-            height: 130px;
+        .profile-avatar {
+            width: 120px;
+            height: 120px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid var(--accent-color);
-            background-color: #f1f5f9;
+            border: 3px solid var(--accent-gold);
+            background-color: #f3f4f6;
             flex-shrink: 0;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
 
-        .profile-title-area {
-            flex-grow: 1;
-        }
-
-        .profile-title-area h1 {
-            margin: 0 0 6px 0;
-            color: var(--primary-blue);
-            font-size: 2em;
+        .profile-info h1 {
+            margin: 0 0 5px 0;
+            color: #111827;
+            font-size: 1.8em;
             letter-spacing: 0.5px;
         }
 
-        .profile-title-area .designation {
+        .profile-info .job-role {
             margin: 0 0 10px 0;
-            color: #475569;
-            font-size: 1.1em;
+            color: #4b5563;
+            font-size: 1.05em;
             font-weight: 600;
         }
 
-        .header-contact-info {
-            font-size: 0.9em;
-            color: #334155;
-            background: #f8fafc;
-            padding: 10px 14px;
-            border-radius: 6px;
-            border-left: 4px solid var(--accent-color);
-            margin-top: 5px;
+        .contact-box {
+            font-size: 0.88em;
+            color: #374151;
+            background: #f9fafb;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border-left: 3px solid var(--accent-gold);
         }
 
-        .header-contact-info a {
-            color: var(--accent-color);
+        .contact-box a {
+            color: #2563eb;
             text-decoration: none;
             font-weight: bold;
         }
 
-        .header-contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        .download-btn {
+        .print-btn {
             position: absolute;
             top: 0;
             right: 0;
-            background-color: var(--accent-color);
+            background-color: #1f2937;
             color: white;
             border: none;
-            padding: 10px 18px;
-            font-size: 0.95em;
+            padding: 10px 16px;
+            font-size: 0.9em;
             font-weight: bold;
             border-radius: 6px;
             cursor: pointer;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            transition: all 0.2s ease;
-        }
-
-        .download-btn:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-1px);
-        }
-
-        details {
-            margin-bottom: 15px;
-            border-radius: 8px;
-            background: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-        }
-        
-        /* Professional Premium Color Theme for 9 Options */
-        details:nth-of-type(1) summary { background-color: #eff6ff; color: #1e40af; border-left: 5px solid #1e40af; }
-        details:nth-of-type(2) summary { background-color: #f0fdf4; color: #166534; border-left: 5px solid #166534; }
-        details:nth-of-type(3) summary { background-color: #fdf4ff; color: #86198f; border-left: 5px solid #86198f; }
-        details:nth-of-type(4) summary { background-color: #fff7ed; color: #c2410c; border-left: 5px solid #c2410c; }
-        details:nth-of-type(5) summary { background-color: #f8fafc; color: #334155; border-left: 5px solid #334155; }
-        details:nth-of-type(6) summary { background-color: #fef2f2; color: #991b1b; border-left: 5px solid #991b1b; }
-        details:nth-of-type(7) summary { background-color: #f5f3ff; color: #5b21b6; border-left: 5px solid #5b21b6; }
-        details:nth-of-type(8) summary { background-color: #ecfeff; color: #155e75; border-left: 5px solid #155e75; }
-        details:nth-of-type(9) summary { background-color: #fdf8f6; color: #7c2d12; border-left: 5px solid #7c2d12; }
-
-        summary {
-            font-size: 1.15em;
-            font-weight: bold;
-            padding: 14px 18px;
-            cursor: pointer;
-            outline: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             transition: background 0.2s;
         }
 
-        summary:hover {
-            opacity: 0.95;
+        .print-btn:hover {
+            background-color: #374151;
         }
 
-        .content-box {
-            padding: 18px 22px;
-            border-top: 1px solid #e2e8f0;
+        details {
+            margin-bottom: 12px;
+            border-radius: 6px;
+            background: #ffffff;
+            border: 1px solid var(--border-line);
+            overflow: hidden;
+        }
+
+        /* 9 Distinct Professional Theme Colors for Summaries */
+        details:nth-of-type(1) summary { background-color: #f8fafc; color: #0f172a; border-left: 4px solid #0f172a; }
+        details:nth-of-type(2) summary { background-color: #f0fdf4; color: #166534; border-left: 4px solid #166534; }
+        details:nth-of-type(3) summary { background-color: #eff6ff; color: #1e40af; border-left: 4px solid #1e40af; }
+        details:nth-of-type(4) summary { background-color: #fdf4ff; color: #86198f; border-left: 4px solid #86198f; }
+        details:nth-of-type(5) summary { background-color: #fff7ed; color: #c2410c; border-left: 4px solid #c2410c; }
+        details:nth-of-type(6) summary { background-color: #fef2f2; color: #991b1b; border-left: 4px solid #991b1b; }
+        details:nth-of-type(7) summary { background-color: #f5f3ff; color: #5b21b6; border-left: 4px solid #5b21b6; }
+        details:nth-of-type(8) summary { background-color: #ecfeff; color: #155e75; border-left: 4px solid #155e75; }
+        details:nth-of-type(9) summary { background-color: #fdf8f6; color: #7c2d12; border-left: 4px solid #7c2d12; }
+
+        summary {
+            font-size: 1.05em;
+            font-weight: bold;
+            padding: 12px 15px;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .section-body {
+            padding: 15px 20px;
+            border-top: 1px solid var(--border-line);
             background-color: #ffffff;
         }
 
@@ -160,16 +140,10 @@
         }
 
         li {
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
-        .contact-info a {
-            color: var(--accent-color);
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        /* PRINT STYLING: Forces all 9 options to stay open and fully expanded in PDF */
+        /* CRITICAL PRINT RULES: Forces all 9 options to expand automatically when PDF is downloaded */
         @media print {
             body {
                 background-color: white !important;
@@ -177,21 +151,20 @@
                 margin: 0;
                 max-width: 100%;
             }
-            .profile-container {
+            .resume-wrapper {
                 box-shadow: none;
                 border: none;
                 padding: 0;
             }
-            .download-btn {
+            .print-btn {
                 display: none !important;
             }
             details {
                 break-inside: avoid;
-                margin-bottom: 12px;
-                border: 1px solid #94a3b8 !important;
-                box-shadow: none !important;
+                margin-bottom: 10px;
+                border: 1px solid #9ca3af !important;
             }
-            /* Forces every details dropdown to expand completely during PDF export */
+            /* Forces details elements to behave like expanded blocks during print */
             details > * {
                 display: block !important;
             }
@@ -205,31 +178,32 @@
 </head>
 <body>
 
-<div class="profile-container">
+<div class="resume-wrapper">
     
-    <div class="profile-header">
-        <button class="download-btn" onclick="window.print()">📥 Download PDF</button>
-        <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-pic">
-        <div class="profile-title-area">
+    <div class="profile-top">
+        <button class="print-btn" onclick="window.print()">📥 Download PDF</button>
+        <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-avatar">
+        <div class="profile-info">
             <h1>RAMAPPA HANAGAL</h1>
-            <p class="designation">Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</p>
-            <div class="header-contact-info">
+            <p class="job-role">Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</p>
+            <div class="contact-box">
                 📍 Sarjapura, Bengaluru, India &nbsp;|&nbsp; 📞 9964375609<br>
                 ✉️ <a href="mailto:ramappa.hanagal@gmail.com">ramappa.hanagal@gmail.com</a> &nbsp;|&nbsp; 🔗 <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">LinkedIn Profile</a>
             </div>
         </div>
     </div>
 
-    <details open>
+    <!-- All 9 Options (Collapsible normally, but auto-expands on PDF download) -->
+    <details>
         <summary>1. Professional Summary</summary>
-        <div class="content-box">
+        <div class="section-body">
             <p>Senior Technical Lead Analyst with over 17 years of extensive multi-domain experience spanning global lab infrastructure operations, hardware validation, component-level debugging, silicon bring-up, and end-to-end project management. Proven expertise in leading cross-functional engineering teams, establishing rigorous governance models, and ensuring seamless execution across high-impact enterprise projects for global industry leaders. Adept at bridging advanced technologies, modern AI tooling, and operational excellence to drive zero-downtime environments, compliance, and optimized technical workflows.</p>
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>2. Key Responsibilities Handled</summary>
-        <div class="content-box">
+        <div class="section-body">
             <ul>
                 <li>Spearheaded global lab infrastructure operations, establishing rigorous governance models, compliance frameworks, and seamless hardware validation workflows.</li>
                 <li>Handled multiple leading smartphone brands including Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi; executed deep device teardowns, component-level rework, high-precision BGA soldering, micro-components handling (0201, 0402, 01005 components), BGA rework, and advanced chip reballing activities.</li>
@@ -251,9 +225,9 @@
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>3. Professional Experience</summary>
-        <div class="content-box">
+        <div class="section-body">
             <ul>
                 <li><strong>Tech Mahindra (June 2026 – Present):</strong> Undergoing Technical Training and Advanced AI Applications / AI Accelerating Program</li>
                 <li><strong>Tech Mahindra — Google Client Project (April 2025 – June 2026):</strong> Technical Lead Analyst</li>
@@ -264,9 +238,9 @@
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>4. Skills and Expertise</summary>
-        <div class="content-box">
+        <div class="section-body">
             <ul>
                 <li><strong>Mobile Device Supported Brands:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi</li>
                 <li><strong>Core Technical Skills:</strong> Silicon Bring-Up, Board Power-On, Hardware Validation & Debugging, High-Precision Soldering (SMD/BGA), Lab Infrastructure Management, Lab Admin Operations, Supply Chain Management, Procurement, Vendor Management, Power Analysis, Thermal Management, Signal Integrity.</li>
@@ -274,9 +248,9 @@
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>5. Tools and Technologies</summary>
-        <div class="content-box">
+        <div class="section-body">
             <ul>
                 <li><strong>Hardware & Measuring Equipment:</strong> Oscilloscope, Digital Multimeter (DMM), DAQ Systems, DC Power Supply, Logic Analyzers, and other specialized lab testing equipment.</li>
                 <li><strong>Supported Devices:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi.</li>
@@ -284,9 +258,9 @@
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>6. Projects and Achievements</summary>
-        <div class="content-box">
+        <div class="section-body">
             <ul>
                 <li>Successfully directed global lab infrastructure setup and validation workflows for major tier-1 client projects, achieving benchmarked turnaround time reductions and zero-downtime lab audits.</li>
                 <li>Designed custom testing fixtures and implemented advanced BGA/SMD micro-soldering solutions that drastically improved prototype board reliability and fault isolation rates.</li>
@@ -295,9 +269,9 @@
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>7. Education and Certifications</summary>
-        <div class="content-box">
+        <div class="section-body">
             <p><strong>Education:</strong></p>
             <ul>
                 <li>B.Sc. in Information Technology — Sikkim Manipal University, Bangalore (2010 – 2013)</li>
@@ -315,9 +289,9 @@
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>8. Professional Details</summary>
-        <div class="content-box contact-info">
+        <div class="section-body">
             <ul>
                 <li><strong>Name:</strong> Ramappa Hanagal</li>
                 <li><strong>Title:</strong> Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</li>
@@ -329,9 +303,9 @@
         </div>
     </details>
 
-    <details open>
+    <details>
         <summary>9. AI Tools & Generative AI Skills</summary>
-        <div class="content-box">
+        <div class="section-body">
             <ul>
                 <li>Google AI Studio</li>
                 <li>Flow.ai</li>
