@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAMAPPA HANAGAL - Professional CV</title>
+    <title>RAMAPPA HANAGAL - Digital CV</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-            color: #1e293b;
+            background: #0f172a;
+            color: #334155;
             margin: 0;
             padding: 20px;
             display: flex;
@@ -22,7 +22,7 @@
             background: #ffffff;
             border-radius: 16px;
             padding: 40px;
-            box-shadow: 0 15px 35px rgba(15, 23, 42, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             border-top: 6px solid #2563eb;
         }
         .header {
@@ -33,8 +33,8 @@
             border-radius: 12px;
             padding: 30px;
             margin-bottom: 30px;
+            gap: 25px;
             flex-wrap: wrap;
-            gap: 20px;
         }
         .profile-img-container {
             width: 120px;
@@ -60,36 +60,41 @@
             color: #0f172a;
             font-size: 26pt;
             font-weight: 800;
-            letter-spacing: 0.5px;
         }
         .header h3 {
             margin: 8px 0 15px 0;
             color: #2563eb;
             font-weight: 700;
-            font-size: 12pt;
+            font-size: 11pt;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
-        .contact-info {
+        .contact-buttons {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
-            font-size: 11pt;
-            font-weight: 500;
+            gap: 10px;
+            margin-top: 15px;
         }
-        .contact-info a, .contact-info span {
-            color: #334155;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .contact-info a {
-            color: #2563eb;
+        .contact-btn {
+            background: #ffffff;
+            color: #1d4ed8;
+            border: 1.5px solid #93c5fd;
+            padding: 8px 14px;
+            border-radius: 8px;
+            font-size: 10pt;
             font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
         }
-        .contact-info a:hover {
-            text-decoration: underline;
+        .contact-btn:hover {
+            background: #2563eb;
+            color: #ffffff;
+            border-color: #2563eb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
         }
         .section-card {
             background: #f8fafc;
@@ -97,17 +102,12 @@
             border-radius: 10px;
             margin-bottom: 20px;
             overflow: hidden;
-            transition: all 0.3s ease;
-        }
-        .section-card:hover {
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            border-color: #cbd5e1;
         }
         .section-title {
             background: #f1f5f9;
             color: #0f172a;
             padding: 15px 20px;
-            font-size: 13pt;
+            font-size: 12.5pt;
             font-weight: 700;
             border-left: 5px solid #2563eb;
             display: flex;
@@ -117,71 +117,22 @@
         .section-body {
             padding: 20px;
         }
-        p {
-            margin: 0 0 10px 0;
-            color: #334155;
-            line-height: 1.6;
-        }
-        ul {
-            padding-left: 20px;
-            margin: 0;
-        }
-        li {
-            margin-bottom: 8px;
-            color: #334155;
-            line-height: 1.5;
-        }
-        .job-block {
-            margin-bottom: 20px;
-        }
-        .job-block:last-child {
-            margin-bottom: 0;
-        }
-        .job-title {
-            font-weight: 700;
-            color: #0f172a;
-            font-size: 11.5pt;
-        }
-        .company-dates {
-            font-style: italic;
-            color: #64748b;
-            font-size: 10pt;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-        .action-bar {
-            text-align: center;
-            margin-top: 30px;
-        }
-        .btn {
-            background: #2563eb;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 11pt;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .btn:hover {
-            background: #1d4ed8;
-        }
+        p { margin: 0 0 10px 0; line-height: 1.6; color: #334155; }
+        ul { padding-left: 20px; margin: 0; }
+        li { margin-bottom: 8px; line-height: 1.5; color: #334155; }
+        .job-block { margin-bottom: 20px; }
+        .job-title { font-weight: 700; color: #0f172a; font-size: 11pt; }
+        .company-dates { font-style: italic; color: #64748b; font-size: 9.5pt; margin-bottom: 6px; font-weight: 600; }
         @media (max-width: 768px) {
             .header { flex-direction: column; text-align: center; }
             .profile-img-container { margin: 0 auto; }
-            .contact-info { justify-content: center; }
+            .contact-buttons { justify-content: center; }
         }
     </style>
 </head>
 <body>
 
 <div class="cv-container">
-    <!-- Digital Header with Photo & Clickable Contacts -->
     <div class="header">
         <div class="profile-img-container">
             <img src="my-photo.jpg" alt="Ramappa Hanagal" onerror="this.src='https://via.placeholder.com/120?text=Photo';">
@@ -189,16 +140,15 @@
         <div class="header-content">
             <h1>RAMAPPA HANAGAL</h1>
             <h3>Senior Technical Lead Analyst — Lab Infrastructure, SRE & Hardware Operations</h3>
-            <div class="contact-info">
-                <span><i class="fas fa-location-dot" style="color: #2563eb;"></i> Sarjapura, Bengaluru, India</span>
-                <span><a href="tel:+919964375609"><i class="fas fa-phone"></i> +91 9964375609</a></span>
-                <span><a href="mailto:ramappa.hanagal@gmail.com"><i class="fas fa-envelope"></i> ramappa.hanagal@gmail.com</a></span>
-                <span><a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn Profile</a></span>
+            <div class="contact-buttons">
+                <span class="contact-btn" style="background: #f8fafc; cursor: default;"><i class="fas fa-location-dot" style="color: #2563eb;"></i> Sarjapura, Bengaluru</span>
+                <a href="tel:+919964375609" class="contact-btn"><i class="fas fa-phone"></i> +91 9964375609</a>
+                <a href="mailto:ramappa.hanagal@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> ramappa.hanagal@gmail.com</a>
+                <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn Profile</a>
             </div>
         </div>
     </div>
 
-    <!-- 1. Professional Summary -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-user-tie"></i> 1. Professional Summary</div>
         <div class="section-body">
@@ -206,7 +156,6 @@
         </div>
     </div>
 
-    <!-- 2. Key Responsibilities Handled -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-tasks"></i> 2. Key Responsibilities Handled</div>
         <div class="section-body">
@@ -220,7 +169,6 @@
         </div>
     </div>
 
-    <!-- 3. Professional Experience -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-briefcase"></i> 3. Professional Experience</div>
         <div class="section-body">
@@ -232,7 +180,7 @@
                     <li>Driving technical training initiatives and upskilling in AI-related technical domains[span_1](start_span)[span_1](end_span).</li>
                 </ul>
             </div>
-            <div class="job-block" style="margin-top: 15px;">
+            <div class="job-block">
                 <div class="job-title">Senior Infrastructure / Lab Support — UST Global (Client: Intel) & Log-Us Business Systems</div>
                 <div class="company-dates">2014 – 2025</div>
                 <ul>
@@ -240,7 +188,7 @@
                     <li>Bridged hardware engineering and project management using ITIL frameworks[span_3](start_span)[span_3](end_span).</li>
                 </ul>
             </div>
-            <div class="job-block" style="margin-top: 15px;">
+            <div class="job-block">
                 <div class="job-title">Service Engineer — Hitech Computers, Hubli</div>
                 <div class="company-dates">Previous Experience</div>
                 <ul>
@@ -250,7 +198,6 @@
         </div>
     </div>
 
-    <!-- 4. Skills & Expertise -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-cogs"></i> 4. Skills & Expertise</div>
         <div class="section-body">
@@ -265,7 +212,6 @@
         </div>
     </div>
 
-    <!-- 5. Tools & Technologies -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-tools"></i> 5. Tools & Technologies</div>
         <div class="section-body">
@@ -277,7 +223,6 @@
         </div>
     </div>
 
-    <!-- 6. Projects & Achievements -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-award"></i> 6. Projects & Achievements</div>
         <div class="section-body">
@@ -288,7 +233,6 @@
         </div>
     </div>
 
-    <!-- 7. Education & Certifications -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-graduation-cap"></i> 7. Education & Certifications</div>
         <div class="section-body">
@@ -300,7 +244,6 @@
         </div>
     </div>
 
-    <!-- 8. Personal Details -->
     <div class="section-card">
         <div class="section-title"><i class="fas fa-id-card"></i> 8. Personal Details</div>
         <div class="section-body">
@@ -308,11 +251,6 @@
                 <li><strong>Date of Birth:</strong> 11/11/1978 &nbsp;|&nbsp; <strong>Languages Known:</strong> English, Kannada, Hindi &nbsp;|&nbsp; <strong>Location:</strong> Sarjapura, Bengaluru, India[span_8](start_span)[span_8](end_span)</li>
             </ul>
         </div>
-    </div>
-
-    <!-- Action Bar -->
-    <div class="action-bar">
-        <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank" class="btn"><i class="fab fa-linkedin"></i> Connect on LinkedIn</a>
     </div>
 </div>
 
