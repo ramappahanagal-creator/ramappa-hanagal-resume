@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAMAPPA HANAGAL — Expandable Digital CV</title>
+    <title>RAMAPPA HANAGAL — Digital CV</title>
     <!-- Google Fonts & FontAwesome Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -105,8 +105,8 @@
             color: #fff !important;
         }
 
-        /* Expandable Accordion Container */
-        .accordion-item {
+        /* Native HTML5 Details & Summary Styling */
+        details {
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 14px;
@@ -115,66 +115,66 @@
             transition: border-color 0.2s ease;
         }
 
-        .accordion-item:hover {
+        details:hover {
             border-color: var(--accent);
         }
 
-        /* Clickable Header */
-        .accordion-header {
-            width: 100%;
+        summary {
             padding: 18px 24px;
-            background: transparent;
-            border: none;
-            color: var(--text-main);
             font-size: 16px;
             font-weight: 700;
+            color: var(--text-main);
+            cursor: pointer;
+            list-style: none; /* Hide default triangle */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            cursor: pointer;
-            text-align: left;
-            transition: color 0.2s;
+            user-select: none;
         }
 
-        .accordion-header .title-text {
+        summary::-webkit-details-marker {
+            display: none; /* Hide default Chrome triangle */
+        }
+
+        summary .title-text {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .accordion-header .title-text i {
+        summary .title-text i {
             color: var(--accent);
             font-size: 18px;
             width: 20px;
         }
 
-        .accordion-header .chevron {
+        /* Custom Arrow icon using FontAwesome */
+        summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
             color: var(--text-muted);
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, color 0.3s ease;
         }
 
-        /* Rotated Arrow when Expanded */
-        .accordion-header.active .chevron {
+        details[open] summary::after {
             transform: rotate(180deg);
             color: var(--accent);
         }
 
-        .accordion-header.active {
+        details[open] summary {
             color: var(--accent);
+            border-bottom: 1px solid var(--border);
         }
 
-        /* Collapsible Content Body */
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease-out, padding 0.35s ease-out;
-            padding: 0 24px;
+        /* Content Box inside Section */
+        .details-body {
+            padding: 20px 24px;
             color: var(--text-muted);
             font-size: 14px;
             line-height: 1.7;
         }
 
-        /* Inner Lists & Badges */
         ul.bullet-list {
             padding-left: 20px;
         }
@@ -187,7 +187,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
-            padding-bottom: 5px;
         }
 
         .skill-badge {
@@ -223,7 +222,7 @@
 
     <div class="cv-container">
 
-        <!-- Fixed Header Card with Quick Action Links -->
+        <!-- Main Header Card with Quick Action Buttons -->
         <header class="profile-card">
             <h1>RAMAPPA HANAGAL</h1>
             <h3>Senior Technical Lead Analyst — Lab Infrastructure, SRE & Hardware Operations</h3>
@@ -238,23 +237,21 @@
         </header>
 
         <!-- 1. Professional Summary -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-user"></i> 1. Professional Summary</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <p>Technical professional with <strong>17+ years</strong> of extensive experience in Hardware, Silicon Bring-up, and AI Technologies. Specialised in IT Infrastructure Support, Hardware Validation, Power Analysis, and Global Lab Operations Management. Backed by strong foundational education in Electronics Mechanics and Information Technology, along with professional certifications in ITIL and Generative AI Fundamentals.</p>
             </div>
-        </div>
+        </details>
 
         <!-- 2. Key Responsibilities Handled -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-list-check"></i> 2. Key Responsibilities Handled</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <ul class="bullet-list">
                     <li>IT Infrastructure Management & IT Lab Operations, Desktop, Laptop, Workstation & Server Support.</li>
                     <li>Mobile Device Support & Hardware Deployment / Installation (L1/L2 Technical Support & Troubleshooting).</li>
@@ -263,15 +260,14 @@
                     <li>Process Improvement, Team Leadership, Stakeholder Communication & Generative AI Fundamentals.</li>
                 </ul>
             </div>
-        </div>
+        </details>
 
         <!-- 3. Professional Experience -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-briefcase"></i> 3. Professional Experience</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <div class="timeline-block">
                     <div class="timeline-role">Technical Lead Analyst — Tech Mahindra</div>
                     <div class="timeline-date">April 2025 – Present</div>
@@ -298,15 +294,14 @@
                     </ul>
                 </div>
             </div>
-        </div>
+        </details>
 
         <!-- 4. Skills & Expertise -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-gears"></i> 4. Skills & Expertise</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <div class="skills-grid">
                     <span class="skill-badge">Lab Infrastructure Setup</span>
                     <span class="skill-badge">Silicon Bring-up</span>
@@ -319,89 +314,64 @@
                     <span class="skill-badge">High-Precision Soldering (SMD/BGA)</span>
                 </div>
             </div>
-        </div>
+        </details>
 
         <!-- 5. Tools & Technologies -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-wrench"></i> 5. Tools & Technologies</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <ul class="bullet-list">
                     <li><strong>Equipment:</strong> Oscilloscopes, DAQ, Agilent Power Supplies, Logic Analyzers.</li>
                     <li><strong>Devices:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi, NUC, ASUS Mini, Congatec Machines.</li>
                     <li><strong>Software & Tools:</strong> SAP/Ariba Procurement, FPGA Image Flashing, EMMC/SD/USB OS Flashing tools.</li>
                 </ul>
             </div>
-        </div>
+        </details>
 
         <!-- 6. Projects & Achievements -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-trophy"></i> 6. Projects & Achievements</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <ul class="bullet-list">
                     <li>Successfully executed global lab operations governance and infrastructure stabilization for major client requirements.</li>
                     <li>Spearheaded hardware validation and power optimization cycles ensuring zero-defect deliverables.</li>
                 </ul>
             </div>
-        </div>
+        </details>
 
         <!-- 7. Education & Certifications -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-graduation-cap"></i> 7. Education & Certifications</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <ul class="bullet-list">
                     <li><strong>B.Sc. in Information Technology:</strong> Sikkim Manipal University, Bangalore (2010 – 2013).</li>
                     <li><strong>National Apprenticeship Certificate (NAC - BEL):</strong> Electronics Mechanic (3 Years Course) (1998 – 2001).</li>
                     <li><strong>Certifications:</strong> ITIL® 4 Foundation, Google Generative AI Series, Skill Nation AI Program, PMP Concepts, ISO/IEC 42001:2023 AIMS Standard.</li>
                 </ul>
             </div>
-        </div>
+        </details>
 
         <!-- 8. Personal Details -->
-        <div class="accordion-item">
-            <button class="accordion-header">
+        <details>
+            <summary>
                 <span class="title-text"><i class="fa-solid fa-address-card"></i> 8. Personal Details</span>
-                <i class="fa-solid fa-chevron-down chevron"></i>
-            </button>
-            <div class="accordion-content">
+            </summary>
+            <div class="details-body">
                 <ul class="bullet-list">
                     <li><strong>Date of Birth:</strong> 11/11/1978</li>
                     <li><strong>Languages Known:</strong> English, Kannada, Hindi</li>
                     <li><strong>Location:</strong> Sarjapura, Bengaluru, India</li>
                 </ul>
             </div>
-        </div>
+        </details>
 
     </div>
 
-    <!-- JavaScript to Handle Accordion Click & Toggle -->
-    <script>
-        const headers = document.querySelectorAll('.accordion-header');
-
-        headers.forEach(header => {
-            header.addEventListener('click', function() {
-                this.classList.toggle('active');
-                const content = this.nextElementSibling;
-
-                if (content.style.maxHeight) {
-                    content.style.maxHeight = null;
-                    content.style.paddingTop = '0px';
-                    content.style.paddingBottom = '0px';
-                } else {
-                    content.style.paddingTop = '15px';
-                    content.style.paddingBottom = '20px';
-                    content.style.maxHeight = content.scrollHeight + 40 + "px";
-                }
-            });
-        });
-    </script>
 </body>
 </html>
