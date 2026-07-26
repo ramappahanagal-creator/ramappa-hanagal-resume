@@ -3,369 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ramappa Hanagal - Senior Technical Lead Analyst</title>
+    <title>Digital CV</title>
     <style>
-        :root {
-            --bg-body: #0b0f19;
-            --card-bg: #ffffff;
-            --accent-gold: #d97706;
-            --text-main: #1f2937;
-            --border-line: #cbd5e1;
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.45;
-            color: var(--text-main);
-            max-width: 900px;
-            margin: 0 auto;
+            font-family: Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
             padding: 15px;
-            background-color: var(--bg-body);
         }
 
-        .resume-wrapper {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-            border-top: 5px solid var(--accent-gold);
-        }
-
-        .profile-top {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            border-bottom: 2px solid var(--border-line);
-            padding-bottom: 15px;
-            margin-bottom: 18px;
-            position: relative;
-        }
-
-        .profile-avatar {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid var(--accent-gold);
-            background-color: #f3f4f6;
-            flex-shrink: 0;
-        }
-
-        .profile-info h1 {
-            margin: 0 0 3px 0;
-            color: #111827;
-            font-size: 1.6em;
-            letter-spacing: 0.5px;
-        }
-
-        .profile-info .job-role {
-            margin: 0 0 8px 0;
-            color: #4b5563;
-            font-size: 0.95em;
-            font-weight: 600;
-        }
-
-        .contact-box {
-            font-size: 0.82em;
-            color: #374151;
-            background: #f9fafb;
-            padding: 6px 10px;
-            border-radius: 4px;
-            border-left: 3px solid var(--accent-gold);
-        }
-
-        .contact-box a {
-            color: #2563eb;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .print-btn {
-            position: absolute;
-            top: 0;
-            right: 0;
-            background-color: #1f2937;
-            color: white;
-            border: none;
-            padding: 8px 14px;
-            font-size: 0.85em;
-            font-weight: bold;
-            border-radius: 5px;
-            cursor: pointer;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-        }
-
-        .print-btn:hover {
-            background-color: #374151;
-        }
-
-        /* Clickable Accordion Box */
-        .accordion-item {
-            margin-bottom: 10px;
-            border-radius: 5px;
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
             background: #ffffff;
-            border: 1px solid var(--border-line);
-            overflow: hidden;
-            page-break-inside: avoid;
-            break-inside: avoid;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .accordion-header {
-            font-size: 0.98em;
-            font-weight: bold;
-            padding: 10px 14px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .accordion-header::after {
-            content: '+';
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .accordion-item.active .accordion-header::after {
-            content: '-';
-        }
-
-        .accordion-item:nth-of-type(1) .accordion-header { background-color: #f8fafc; color: #0f172a; border-left: 4px solid #0f172a; }
-        .accordion-item:nth-of-type(2) .accordion-header { background-color: #f0fdf4; color: #166534; border-left: 4px solid #166534; }
-        .accordion-item:nth-of-type(3) .accordion-header { background-color: #eff6ff; color: #1e40af; border-left: 4px solid #1e40af; }
-        .accordion-item:nth-of-type(4) .accordion-header { background-color: #fdf4ff; color: #86198f; border-left: 4px solid #86198f; }
-        .accordion-item:nth-of-type(5) .accordion-header { background-color: #fff7ed; color: #c2410c; border-left: 4px solid #c2410c; }
-        .accordion-item:nth-of-type(6) .accordion-header { background-color: #fef2f2; color: #991b1b; border-left: 4px solid #991b1b; }
-        .accordion-item:nth-of-type(7) .accordion-header { background-color: #f5f3ff; color: #5b21b6; border-left: 4px solid #5b21b6; }
-        .accordion-item:nth-of-type(8) .accordion-header { background-color: #ecfeff; color: #155e75; border-left: 4px solid #155e75; }
-        .accordion-item:nth-of-type(9) .accordion-header { background-color: #fdf8f6; color: #7c2d12; border-left: 4px solid #7c2d12; }
-
-        .accordion-body {
-            display: none; /* Hidden by default on web view */
-            padding: 10px 14px;
-            border-top: 1px solid var(--border-line);
-            background-color: #ffffff;
-            font-size: 0.9em;
-        }
-
-        .accordion-item.active .accordion-body {
-            display: block; /* Opens when clicked */
-        }
-
-        ul {
-            padding-left: 18px;
-            margin: 0;
-        }
-
-        li {
-            margin-bottom: 4px;
-        }
-
-        p {
-            margin: 0 0 5px 0;
-        }
-
-        /* Print Settings: Forces all bodies to show when downloading/printing PDF */
-        @media print {
-            @page {
-                size: A4;
-                margin: 10mm;
-            }
+        @media screen and (max-width: 768px) {
             body {
-                background-color: white !important;
-                padding: 0;
-                margin: 0;
-                max-width: 100%;
-                font-size: 11pt;
+                padding: 5px !important;
             }
-            .resume-wrapper {
+            .cv-container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 15px !important;
+                margin: 0 auto !important;
+                border-radius: 0;
                 box-shadow: none;
-                border: none;
-                padding: 0;
             }
-            .print-btn {
-                display: none !important;
+            table {
+                width: 100% !important;
+                display: block !important;
+                overflow-x: auto !important;
             }
-            .accordion-item {
-                break-inside: avoid;
-                page-break-inside: avoid;
-                margin-bottom: 10px;
-                border: 1px solid #9ca3af !important;
-            }
-            .accordion-header::after {
-                display: none; /* Hide plus/minus on print */
-            }
-            .accordion-body {
-                display: block !important; /* Force expand all sections on PDF */
+            h1, h2, h3, p, span, li {
+                word-wrap: break-word;
+                overflow-wrap: break-word;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="resume-wrapper">
-    
-    <div class="profile-top">
-        <button class="print-btn" onclick="window.print()">📥 Download PDF</button>
-        <img src="my-photo.jpg" alt="Ramappa Hanagal" class="profile-avatar">
-        <div class="profile-info">
-            <h1>RAMAPPA HANAGAL</h1>
-            <p class="job-role">Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</p>
-            <div class="contact-box">
-                📍 Sarjapura, Bengaluru, India &nbsp;|&nbsp; 📞 9964375609<br>
-                ✉️ <a href="mailto:ramappa.hanagal@gmail.com">ramappa.hanagal@gmail.com</a> &nbsp;|&nbsp; 🔗 <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">LinkedIn Profile</a>
-            </div>
-        </div>
+    <div class="cv-container">
+        <!-- Your original content goes here -->
     </div>
-
-    <!-- 1. Professional Summary -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">1. Professional Summary</div>
-        <div class="accordion-body">
-            <p>Senior Technical Lead Analyst with over 17 years of extensive multi-domain experience spanning global lab infrastructure operations, hardware validation, component-level debugging, silicon bring-up, and end-to-end project management. Proven expertise in leading cross-functional engineering teams, establishing rigorous governance models, and ensuring seamless execution across high-impact enterprise projects for global industry leaders. Adept at bridging advanced technologies, modern AI tooling, and operational excellence to drive zero-downtime environments, compliance, and optimized technical workflows.</p>
-        </div>
-    </div>
-
-    <!-- 2. Key Responsibilities Handled -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">2. Key Responsibilities Handled</div>
-        <div class="accordion-body">
-            <ul>
-                <li>Spearheaded global lab infrastructure operations, establishing rigorous governance models, compliance frameworks, and seamless hardware validation workflows.</li>
-                <li>Handled multiple leading smartphone brands including Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi; executed deep device teardowns, component-level rework, high-precision BGA soldering, micro-components handling (0201, 0402, 01005 components), BGA rework, and advanced chip reballing activities.</li>
-                <li>Performed comprehensive debugging, hardware troubleshooting, performance benchmarking, and power analysis across diverse smartphone platforms.</li>
-                <li>Managed end-to-end laboratory asset tracking, calibration schedules, tool maintenance, and safety compliance audits to ensure zero downtime.</li>
-                <li>Coordinated cross-functional engineering teams to streamline hardware validation cycles, root-cause analysis, and defect tracking reports.</li>
-                <li>Implemented strict quality assurance protocols for prototype testing, ensuring compliance with global regulatory and client-specific engineering standards.</li>
-                <li>Maintained detailed technical documentation, test logs, failure analysis reports, and standard operating procedures (SOPs) for lab operations.</li>
-                <li>Handled vendor negotiations, procurement of specialized testing equipment, and inventory control for critical electronic components and spare parts.</li>
-                <li>Spearheaded technical training and knowledge transfer sessions for junior engineers and technicians on advanced soldering and diagnostic techniques.</li>
-                <li>Optimized lab workflow efficiencies by adopting automated testing methodologies and streamlining hardware triage processes.</li>
-                <li>Directed and executed critical silicon bring-up, advanced board power-on sequences, and complex hardware debugging activities across multiple silicon generations and prototype boards.</li>
-                <li>Performed high-precision micro-soldering (SMD/BGA) and component-level fault isolation, significantly reducing hardware turnaround times and improving prototype reliability.</li>
-                <li>Led, mentored, and supervised technical teams, overseeing daily lab operations, equipment maintenance, and adherence to strict safety and quality protocols.</li>
-                <li>Executed thermal management analysis, voltage/current measurements, and signal integrity checks during initial board bring-up phases.</li>
-                <li>Implemented rigorous ESD (Electrostatic Discharge) safety standards and lab environmental controls across all engineering testing floors.</li>
-                <li>Designed and executed custom test fixtures and jigs to enhance diagnostic accuracy and speed up board-level testing cycles.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 3. Professional Experience -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">3. Professional Experience</div>
-        <div class="accordion-body">
-            <ul>
-                <li><strong>Tech Mahindra (June 2026 – Present):</strong> Undergoing Technical Training and Advanced AI Applications / AI Accelerating Program</li>
-                <li><strong>Tech Mahindra — Google Client Project (April 2025 – June 2026):</strong> Technical Lead Analyst</li>
-                <li><strong>UST Global — Intel Client Project (2014 – 2025):</strong> Lab Associate 2, Lab Admin, Senior Rework Engineer & Technical Team Lead</li>
-                <li><strong>Log-Us Business Systems (2009 – 2014):</strong> System Engineer, Lab Admin, Senior Rework Engineer & Technical Team Lead</li>
-                <li><strong>Hi-tech Computers & Mangala Electronics, Hubli (2001 – 2005):</strong> Audio & Video Servicing Engineer</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 4. Skills and Expertise -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">4. Skills and Expertise</div>
-        <div class="accordion-body">
-            <ul>
-                <li><strong>Mobile Device Supported Brands:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi</li>
-                <li><strong>Core Technical Skills:</strong> Silicon Bring-Up, Board Power-On, Hardware Validation & Debugging, High-Precision Soldering (SMD/BGA), Lab Infrastructure Management, Lab Admin Operations, Supply Chain Management, Procurement, Vendor Management, Power Analysis, Thermal Management, Signal Integrity.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 5. Tools and Technologies -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">5. Tools and Technologies</div>
-        <div class="accordion-body">
-            <ul>
-                <li><strong>Hardware & Measuring Equipment:</strong> Oscilloscope, Digital Multimeter (DMM), DAQ Systems, DC Power Supply, Logic Analyzers, and other specialized lab testing equipment.</li>
-                <li><strong>Supported Devices:</strong> Apple iPhone, Google Pixel, OPPO, Realme, MI / Xiaomi.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 6. Projects and Achievements -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">6. Projects and Achievements</div>
-        <div class="accordion-body">
-            <ul>
-                <li>Successfully directed global lab infrastructure setup and validation workflows for major tier-1 client projects, achieving benchmarked turnaround time reductions and zero-downtime lab audits.</li>
-                <li>Designed custom testing fixtures and implemented advanced BGA/SMD micro-soldering solutions that drastically improved prototype board reliability and fault isolation rates.</li>
-                <li>Spearheaded digital transformation and workflow efficiency drives by integrating advanced automated tracking, inventory governance, and team training modules.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 7. Education and Certifications -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">7. Education and Certifications</div>
-        <div class="accordion-body">
-            <p><strong>Education:</strong></p>
-            <ul>
-                <li>B.Sc. in Information Technology — Sikkim Manipal University, Bangalore (2010 – 2013)</li>
-                <li>ITI – Electronics Mechanics — Government ITI, Kalaghatagi (1998 – 2000)</li>
-                <li>National Apprenticeship Certificate (NAC) — BEL, Bangalore (2001 – 2002)</li>
-                <li>Hardware & Networking Certification (2008 – 2009)</li>
-            </ul>
-            <p style="margin-top: 6px;"><strong>Certifications (30+ Total):</strong></p>
-            <ul>
-                <li><strong>AI & Generative AI:</strong> Skill Nation AI Program, Google Gen AI Courses, Tech Mahindra AI 101, ISO/IEC 42001:2023 AIMS Standard</li>
-                <li><strong>IT, Project Management & Operations:</strong> ITIL® 4 Foundation, PMP Training (35 Hours), Future Leaders Program, Supply Chain Foundations</li>
-                <li><strong>Electronics, Hardware & Networking:</strong> FPGA Development Courses & Labs, Advanced Electronics Soldering & Rework, Computer Peripherals & Mainboard Troubleshooting</li>
-                <li><strong>Additional Credentials:</strong> Global Lab Infrastructure Governance & Compliance Modules, Mobile Device 5G Architecture & Teardown Specialist Badges, Silicon Bring-Up & Power Analysis Methodologies, Technical Workflow Automation & Enterprise Tooling Certifications</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 8. Professional Details -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">8. Professional Details</div>
-        <div class="accordion-body">
-            <ul>
-                <li><strong>Name:</strong> Ramappa Hanagal</li>
-                <li><strong>Title:</strong> Senior Technical Lead Analyst — Lab Infrastructure & Project Management Operations</li>
-                <li><strong>Location:</strong> Sarjapura, Bengaluru, India</li>
-                <li><strong>Contact:</strong> 9964375609</li>
-                <li><strong>Email:</strong> <a href="mailto:ramappa.hanagal@gmail.com">ramappa.hanagal@gmail.com</a></li>
-                <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ramappa-hanagal" target="_blank">linkedin.com/in/ramappa-hanagal</a></li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- 9. AI Tools & Generative AI Skills -->
-    <div class="accordion-item">
-        <div class="accordion-header" onclick="toggleAccordion(this)">9. AI Tools & Generative AI Skills</div>
-        <div class="accordion-body">
-            <ul>
-                <li>Google AI Studio</li>
-                <li>Flow.ai</li>
-                <li>Claude AI (Anthropic)</li>
-                <li>ChatGPT / OpenAI Tools</li>
-                <li>Google Gemini</li>
-                <li>NotebookLM (Google)</li>
-                <li>Julius AI</li>
-                <li>GitHub & Version Control</li>
-                <li>Microsoft 365 Copilot / M365 AI Tools</li>
-                <li>n8n (Workflow Automation & AI Integration)</li>
-                <li>Whisper (OpenAI Whisper — Speech-to-Text & Audio AI)</li>
-                <li>Prompt Engineering & AI-Assisted Workflows</li>
-                <li>Tech Mahindra AI 101 & Gen AI Fundamentals</li>
-            </ul>
-        </div>
-    </div>
-
-</div>
-
-<!-- JavaScript for Click Toggle Accordion -->
-<script>
-    function toggleAccordion(header) {
-        const item = header.parentElement;
-        item.classList.toggle('active');
-    }
-</script>
 
 </body>
 </html>
