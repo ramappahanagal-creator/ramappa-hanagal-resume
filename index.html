@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,22 +28,32 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Responsive styling for tables and content */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
         @media screen and (max-width: 768px) {
             body {
-                padding: 5px !important;
+                padding: 5px;
             }
             .cv-container {
-                max-width: 100% !important;
-                width: 100% !important;
-                padding: 15px !important;
-                margin: 0 auto !important;
+                max-width: 100%;
+                width: 100%;
+                padding: 15px;
                 border-radius: 0;
                 box-shadow: none;
             }
             table {
-                width: 100% !important;
-                display: block !important;
-                overflow-x: auto !important;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
             }
             h1, h2, h3, p, span, li {
                 word-wrap: break-word;
@@ -56,6 +66,8 @@
 
     <div class="cv-container">
         <!-- Your original content goes here -->
+        <h1>ನಿಮ್ಮ ಹೆಸರು</h1>
+        <p>ಇಲ್ಲಿ ನಿಮ್ಮ CV ವಿವರಗಳನ್ನು ಸೇರಿಸಿ...</p>
     </div>
 
 </body>
